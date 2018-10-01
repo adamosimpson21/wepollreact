@@ -4,7 +4,6 @@ import './App.css'
 import Landing from './landing/Landing'
 import ErrorBoundary from './hocs/ErrorBoundary'
 import NavBar from "./hocs/NavBar";
-import About from "./about/About";
 import Party from "./party/Party";
 import Profile from "./profile/Profile";
 import Question from "./question/Question";
