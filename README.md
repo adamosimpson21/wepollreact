@@ -1,5 +1,30 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+WePoll is migrating it's front end to React! This is overhauling a lot of the front end functionality.
+The backend is also shifting to a more RESTful API-like structure during this transformation.
+
+How to start the project:
+Clone the Repo located at 
+    git clone https://github.com/adamosimpson21/wepollreact master
+cd WePollApi run 
+    "node index.js" || "nodemon" to start the api
+cd WePollApi run 
+    "mongod" to start the database
+cd WePollClient run 
+    "npm start" to start the client side application
+
+
+
+
+
+
+
+
+
+
+
+
+
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 

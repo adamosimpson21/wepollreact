@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './ItemForm.css'
+import { connect } from 'react-redux'
 
 class ItemForm extends Component{
   constructor(props){
@@ -16,6 +17,10 @@ class ItemForm extends Component{
   }
 
   handleSubmit(){
+    // this.props.dispatch({
+    //   type: "ADD_ITEM",
+    //   task: this.state.task
+    // })
     this.props.addItem(this.state.inputValue)
   }
 

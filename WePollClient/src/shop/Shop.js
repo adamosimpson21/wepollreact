@@ -4,13 +4,15 @@ import ItemList from './ItemList'
 import ItemForm from "./ItemForm";
 import {fetchErrorHandler} from "../helper/helper";
 import * as apiCalls from './api'
+import {connect} from 'react-redux';
+import {addItem, removeItem} from "../actions/actionsCreators";
 
 class Shop extends Component{
   constructor(props){
     super(props);
     this.state = {
-      items:[]
-    };
+      items: []
+    }
     this.addItem = this.addItem.bind(this)
   }
 
@@ -52,4 +54,10 @@ class Shop extends Component{
   }
 }
 
-export default Shop;
+function mapStateToProps(reduxState){
+  return {
+    items: reduxState.items
+  }
+}
+
+export default connect(mapStateToProps, {addItem, removeItem})(Shop);

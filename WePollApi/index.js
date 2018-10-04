@@ -7,9 +7,6 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-
-
-
 //requiring routes
 var questionsRoutes = require("./routes/questions");
 var indexRoutes     = require("./routes/index");
