@@ -1,6 +1,5 @@
-var express = require("express"),
+const express = require("express"),
     router = express.Router(),
-    passport = require("passport"),
     mongoose = require("mongoose"),
     Item = require("../models/item"),
     middleware = require("../middleware/index"),
