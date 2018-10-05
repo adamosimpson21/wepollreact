@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="daab1bdc-cbe9-4ecd-ac83-5d1122bb79fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="daab1bdc-cbe9-4ecd-ac83-5d1122bb79fe" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -57,7 +54,7 @@
           <entry key="html" value="7" />
           <entry key="js" value="8841" />
           <entry key="json" value="33" />
-          <entry key="md" value="2509" />
+          <entry key="md" value="2590" />
           <entry key="mongod" value="7" />
         </counts>
       </usages-collector>
@@ -67,7 +64,7 @@
           <entry key="HTML" value="7" />
           <entry key="JSON" value="33" />
           <entry key="JavaScript" value="8841" />
-          <entry key="Markdown" value="2509" />
+          <entry key="Markdown" value="2590" />
           <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
@@ -111,8 +108,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="470">
-                <caret line="23" column="550" selection-start-line="23" selection-start-column="550" selection-end-line="23" selection-end-column="550" />
+              <first_editor relative-caret-position="230">
+                <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
                 <folding>
                   <element signature="e#0#26#0" expanded="true" />
                   <element signature="e#0#35#0" expanded="true" />
@@ -298,6 +295,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -333,12 +331,12 @@
       <workItem from="1537652161311" duration="14853000" />
       <workItem from="1538167233210" duration="2193000" />
       <workItem from="1538371758802" duration="1075000" />
-      <workItem from="1538690261624" duration="7298000" />
+      <workItem from="1538690261624" duration="8000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48442000" />
+    <option name="totallyTimeSpent" value="49144000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -351,7 +349,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1873" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28828338" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -720,8 +717,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="470">
-            <caret line="23" column="550" selection-start-line="23" selection-start-column="550" selection-end-line="23" selection-end-column="550" />
+          <first_editor relative-caret-position="230">
+            <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
             <folding>
               <element signature="e#0#26#0" expanded="true" />
               <element signature="e#0#35#0" expanded="true" />

@@ -3,6 +3,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 WePoll is migrating it's front end to React! This is overhauling a lot of the front end functionality.
 The backend is also shifting to a more RESTful API-like structure during this transformation.
 
+
+
 How to start the project:
 Clone the Repo located at\
 &nbsp; git clone https://github.com/adamosimpson21/wepollreact master\
