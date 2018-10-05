@@ -4,25 +4,31 @@ WePoll is migrating it's front end to React! This is overhauling a lot of the fr
 The backend is also shifting to a more RESTful API-like structure during this transformation.
 
 How to start the project:
-Clone the Repo located at 
-    git clone https://github.com/adamosimpson21/wepollreact master
-cd WePollApi run 
-    "node index.js" || "nodemon" to start the api
-cd WePollApi run 
-    "mongod" to start the database
-cd WePollClient run 
-    "npm start" to start the client side application
+Clone the Repo located at\
+&nbsp; git clone https://github.com/adamosimpson21/wepollreact master\
+&nbsp; npm install \
+cd WePollApi => \
+&nbsp; "node index.js" || "nodemon" to start the api\
+cd WePollApi => \
+&nbsp; "mongod" to start the database\
+cd WePollClient => \
+&nbsp; "npm start" to start the client side application
+
+&nbsp; In it's current version (10/4) There is a lot of work to be done, and BandsWithLegends is mostly working on scaffolding and understanding React/Redux and the MERN stack in better detail. Many changes will come soon, as there's a lot todo and port over from the old version.
+
+&nbsp; There are also a lot of artifacts from the previous version lurking in the file system, they are import pieces of knowledge, but most will likely be rewritten in the coming month (Oct 2018).
 
 
+&nbsp; The purpose of this project is for BandsWithLegends to build a full stack application with the MERN stack and gain knowledge and fluidity for a programming career. If you'd like to contribute to this project, through mentorship, styling, or guidance, please contact BandsWithLegends through e-mail at adamosimpson21@gmail.com. Thanks!
 
+&nbsp; Eventually, This project will be the flagship application of Democratic Innovation Studios (DIS), WePoll. It's an interactive application in which Users can vote on questions and topics that interest them. They can also learn about these topics and see how other people have voted on them. Eventually, users will be able to export this data, which can be split up by different demographics, to greater understand and share information about their fellow humans.
 
-
-
-
-
-
-
-
+&nbsp; Thanks so much for checking out my application, if you'd like to contact me (BandsWithLegends) you can do so through \
+ e-mail : adamosimpson21@gmail.com , through   
+ my site: http://BandsWithLegends.com ,  
+ twitter: @BandsWithLegend  (no s at the end), or   
+ youtube: BandsWithLegends .  
+ I'm a junior Web Developer located in the Greater Seattle Area, actively looking for an engineering role. My background is in music, competitive gaming, and Food Service/Hospitality. There's a lot more to know about me, so feel free to throw me an e-mail or a DM on twitter 
 
 
 Below you will find some information on how to perform common tasks.<br>
