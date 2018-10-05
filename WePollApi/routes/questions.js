@@ -1,8 +1,14 @@
-var express = require("express");
-var router = express.Router();
-var Question = require("../models/question");
-var User = require("../models/user");
-var middleware = require("../middleware/index");
+const express = require("express");
+const router = express.Router({mergeParams:true});
+const {createQuestion} = require("../handlers/questions")
+const Question = require("../models/question");
+const User = require("../models/user");
+const middleware = require("../middleware/index");
+
+
+// /api/questions/:id/
+router.route("/").post(createQuestion)
+
 
 //Question Index Route
 router.get("/", function(req, res){
@@ -23,21 +29,7 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
 })
 
 
-//Question Create Route
-router.post("/", middleware.isLoggedIn, function(req, res){
-    var newQuestion = middleware.createQuestion(req);
-    //create a new question and save to DB
-    Question.create(newQuestion, function(err, questionVar){
-        if (err){
-            console.log(err)
-            req.flash("error", err.message);
-        } else {
-            
-        }
-    })
-    req.flash("success", "Question created successfully");
-    res.redirect("/questions");
-})
+
 
 //Questions Show Route
 router.get("/:id", middleware.isLoggedIn, function(req, res){

@@ -1,8 +1,8 @@
 //MiddleWare Index
-var Question = require("../models/question");
-var middlewareObj={};
-var mongoose = require("mongoose");
-var express = require("express");
+const Question = require("../models/question");
+const middlewareObj={};
+const mongoose = require("mongoose");
+const express = require("express");
 
 
 //Array Equals method
