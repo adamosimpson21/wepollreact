@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
+import { Route, Redirect, Switch } from 'react-router-dom'
 import './App.css'
 import Landing from './landing/Landing'
 import ErrorBoundary from './hocs/ErrorBoundary'
@@ -16,9 +16,8 @@ import Footer from "./hocs/Footer";
 
 const App = () => (
   <ErrorBoundary>
-    <Router>
-      <div className='App'>
-        <NavBar />
+    <div className='App'>
+      <NavBar />
         <Switch>
           <Route path='/landing' component={Landing} />
           <Route path='/about' component={() => window.location = 'https://www.dinnostudio.com/wepoll-deck'} />
@@ -32,9 +31,8 @@ const App = () => (
           <Route path='/logIn' component={LogIn} />
           <Redirect from="/" to="/landing" />
         </Switch>
-        <Footer />
-      </div>
-    </Router>
+      <Footer />
+    </div>
   </ErrorBoundary>
 )
 
