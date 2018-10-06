@@ -1,7 +1,7 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 //Tag Schema Setup
-var TagSchema = new mongoose.Schema({
+const TagSchema = new mongoose.Schema({
     tag: String,
     question: [{
         type:mongoose.Schema.Types.ObjectId,

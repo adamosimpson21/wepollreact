@@ -3,90 +3,73 @@ const bcrypt = require("bcrypt");
 
 //User Schema Setup
 const UserSchema = new mongoose.Schema({
-  username:
-    {
+  username:{
       type: String,
       required: true,
       unique: true
     },
-  password:
-    {
+  password:{
       type:String,
       required:true
     },
   image: String,
   settings: [],
-  party:
-    {
+  party:{
       type:mongoose.Schema.Types.ObjectId,
       ref:"Party"
     },
-  questions:
-    [
+  questions:[
       {
         type:mongoose.Schema.Types.ObjectId,
         ref:"Question"
       }
     ],
   answers:[],
-  coins:
-    {
+  coins:{
       type:Number,
       default: 5
     },
-  experience:
-    {
+  experience:{
       type:Number,
       default: 0
     },
-  inventory:
-    [
+  inventory:[
       {
        type:mongoose.Schema.Types.ObjectId,
        ref: "Item"
       }
     ],
-  avatar:
-    {
+  avatar:{
       type:String,
       default: "https://freeclipartimage.com//storage/upload/human-clipart/human-clipart-15.png"
     },
-  createdAt:
-    {
-      type:Date,
-      default:Date.now
-    },
-  age:
-    {
+  age:{
       type:Number,
       default: 1
     },
-  race:
-    {
+  race:{
       type:String, enum: ['White', 'Black', 'Native American', 'Hispanic', 'Other', 'Not Specified'],
       default: 'Not Specified'
     },
-  income:
-    {
+  income:{
       type:Number,
       default: 0
     },
-  gender:
-    {
+  gender:{
       type:String, enum: ['Male', 'Female', 'Other', 'Choose not to say', 'Not Specified'],
       default: 'Not Specified'
     },
-  education:
-    {
+  education:{
       type:String, enum: ['Masters', 'Bachelors', 'High School', 'Less than High School', 'Not Specified'],
       default: 'Not Specified'
     },
   location: String,
-  familySize:
-    {
+  familySize:{
       type:Number,
       default: 0
     }
+},{
+  timestamps:true
 })
 
 UserSchema.pre("save", async function(next){

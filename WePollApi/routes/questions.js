@@ -1,13 +1,20 @@
 const express = require("express");
 const router = express.Router({mergeParams:true});
-const {createQuestion} = require("../handlers/questions")
 const Question = require("../models/question");
 const User = require("../models/user");
 const middleware = require("../middleware/index");
 
+const { createQuestion,
+        getQuestion,
+        deleteQuestion
+} = require("../handlers/questions")
 
 // /api/questions/:id/
 router.route("/").post(createQuestion)
+
+router.route("/:question_id")
+  .get(getQuestion)
+  .delete(deleteQuestion)
 
 
 //Question Index Route

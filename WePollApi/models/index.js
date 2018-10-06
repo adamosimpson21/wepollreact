@@ -4,6 +4,9 @@ mongoose.connect('mongodb://localhost/wepoll')
 
 mongoose.Promise = Promise;
 
-module.exports.User = require('./user')
 module.exports.Item = require('./item')
+module.exports.Party = require('./party')
 module.exports.Question = require('./question')
+module.exports.Review = require('./review')
+module.exports.Tag = require('./tag')
+module.exports.User = require('./user')

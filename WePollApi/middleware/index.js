@@ -8,97 +8,99 @@ const express = require("express");
 //Array Equals method
 // Warn if overriding existing method
 if(Array.prototype.equals)
-    console.warn("Overriding existing Array.prototype.equals. Possible causes: New API defines the method, there's a framework conflict or you've got double inclusions in your code.");
+  console.warn("Overriding existing Array.prototype.equals. Possible causes: New API defines the method, there's a framework conflict or you've got double inclusions in your code.");
 // attach the .equals method to Array's prototype to call it on any array
 Array.prototype.equals = function (array) {
-    // if the other array is a falsy value, return
-    if (!array)
-        return false;
+  // if the other array is a falsy value, return
+  if (!array)
+    return false;
 
-    // compare lengths - can save a lot of time 
-    if (this.length != array.length)
-        return false;
+  // compare lengths - can save a lot of time
+  if (this.length != array.length)
+    return false;
 
-    for (var i = 0, l=this.length; i < l; i++) {
-        // Check if we have nested arrays
-        if (this[i] instanceof Array && array[i] instanceof Array) {
-            // recurse into the nested arrays
-            if (!this[i].equals(array[i]))
-                return false;       
-        }           
-        else if (this[i] != array[i]) { 
-            // Warning - two different object instances will never be equal: {x:20} != {x:20}
-            return false;   
-        }           
-    }       
-    return true;
+  for (var i = 0, l=this.length; i < l; i++) {
+    // Check if we have nested arrays
+    if (this[i] instanceof Array && array[i] instanceof Array) {
+      // recurse into the nested arrays
+      if (!this[i].equals(array[i]))
+          return false;
+    }
+    else if (this[i] != array[i]) {
+      // Warning - two different object instances will never be equal: {x:20} != {x:20}
+      return false;
+    }
+  }
+  return true;
 }
 // Hide method from for-in loops
 Object.defineProperty(Array.prototype, "equals", {enumerable: false});
 
 middlewareObj.createAnswer= function createAnswer2(answer, question){
-    question.answers.push(answer);
-    question.save();
+  question.answers.push(answer);
+  question.save();
 }
 
 middlewareObj.createQuestion = function createQuestion(req){
-    var title = req.body.title;
-    var description = req.body.description;
-    var questionContent = req.body.questionContent;
-    var education = req.body.education;
-    var author = req.user._id;
-    //variable Answer
-    var numberOfAnswers = req.body.numberOfAnswers
-    var answers = []
-    for(var i=0; i<numberOfAnswers; i++){
-        answers.push([req.body.answer[i],0])
-    }
-    var newQuestion = {
-                        title, 
-                        description, 
-                        questionContent, 
-                        education, 
-                        author,
-                        answers
-                    }
-    return newQuestion;
+  const title = req.body.title;
+  const description = req.body.description;
+  const questionContent = req.body.questionContent;
+  const education = req.body.education;
+  const author = req.user._id;
+  //variable Answer
+  // const numberOfAnswers = req.body.numberOfAnswers
+  const answers = []
+  // saved incase I'm bad at refactoring
+  // for(var i=0; i<numberOfAnswers; i++){
+  //     answers.push([req.body.answer[i],0])
+  // }
+  req.body.answer.forEach(answer => answers.push([answer,0]))
+  const newQuestion = {
+    title,
+    description,
+    questionContent,
+    education,
+    author,
+    answers
+  }
+  return newQuestion;
 }
 
 middlewareObj.isLoggedIn= function(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-    req.flash("error", "Log In to do that");
-    res.redirect("/login");
+  if(req.isAuthenticated()){
+    return next();
+  }
+  req.flash("error", "Log In to do that");
+  res.redirect("/login");
 };
 
 
 
 middlewareObj.logAnswer = function logAnswer(answer, question, user, req){
-    var storedAnswer = [question._id,answer];
-    //increment answer tally
-    for(var i=0; i<question.answers.length; i++){
-        if(question.answers[i][0]==(answer)){
-            question.answers[i][1] =question.answers[i][1]+1;
-            Question.findByIdAndUpdate(question._id, question, function(err, foundQuestion2){
-                if(err){
-                    console.log(err)
-                }
-            })
+  var storedAnswer = [question._id,answer];
+  //increment answer tally
+  for(var i=0; i<question.answers.length; i++){
+    if(question.answers[i][0]==(answer)){
+      question.answers[i][1] =question.answers[i][1]+1;
+      Question.findByIdAndUpdate(question._id, question, function(err, foundQuestion2){
+        if(err){
+            console.log(err)
         }
+      })
     }
-    if(question.xpReward){
-        var userLevelBefore = middlewareObj.checkLevel(user.experience)
-        user.experience += question.xpReward
-        //Check for LevelUp
-        var userLevelAfter = middlewareObj.checkLevel(user.experience)
-        if(userLevelBefore!==userLevelAfter){
-            req.flash("success", "You've level up to level " + userLevelAfter)
-        }
+  }
+  if(question.xpReward){
+    var userLevelBefore = middlewareObj.checkLevel(user.experience)
+    user.experience += question.xpReward
+    //Check for LevelUp
+    var userLevelAfter = middlewareObj.checkLevel(user.experience)
+    if(userLevelBefore!==userLevelAfter){
+        req.flash("success", "You've level up to level " + userLevelAfter)
     }
-    user.questions.push(question._id);
-    user.answers.push(storedAnswer);
-    user.save();
+  }
+  user.questions.push(question._id);
+  user.answers.push(storedAnswer);
+  user.save();
 }
 
 //Checks to see if a user has Answered a Question

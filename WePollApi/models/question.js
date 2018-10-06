@@ -29,11 +29,9 @@ const questionSchema = new mongoose.Schema({
   },
   education: String,
   tags: [],
-  answers: [],
-  createdAt:{
-    type:Date,
-    default:Date.now
-  }
+  answers: []
+},{
+  timestamps: true
 })
 
 questionSchema.pre("remove", async function(next){

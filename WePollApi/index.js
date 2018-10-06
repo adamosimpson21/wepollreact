@@ -6,6 +6,7 @@ const port = process.env.PORT || 4000;
 const bodyParser = require("body-parser");
 const errorHandler = require("./handlers/error")
 const {loginRequired, ensureCorrectUser} = require("./middleware/auth")
+const db = require("./models")
 
 //Config
 app.use(cors());
@@ -21,7 +22,22 @@ const authRoutes      = require("./routes/auth");
 
 //Using Routes
 app.use("/api", indexRoutes);
-app.use("/api/questions", questionsRoutes);
+app.get("/api/questions", async function(req, res, next){
+  try{
+    let questions = await db.Question.find()
+      .sort({createdAt:'desc'})
+      .populate("author", {
+        username: true
+      })
+    return res.status(200).json(questions)
+  } catch(err){
+    return next(err);
+  }
+})
+app.use("/api/users/:id/questions",
+  loginRequired,
+  ensureCorrectUser,
+  questionsRoutes);
 app.use("/api/items", itemRoutes);
 app.use("/api/auth", authRoutes)
 app.use("/api/", otherRoutes);
