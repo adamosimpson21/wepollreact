@@ -7,7 +7,8 @@
 .App {
   text-align: center;
   height:100%;
-  color:#cccccc;
+  /*color:#cccccc;*/
+  color:black;
   font-size:16px;
 }
 

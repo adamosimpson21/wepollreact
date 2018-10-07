@@ -8,36 +8,63 @@ class LogIn extends Component{
       username:'',
       password:''
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange(e){
+  handleChange = e => {
     this.setState({
       [e.target.name]:e.target.value
     });
   }
 
-  handleSubmit(e){
-    this.setState({
-      inputValue:e.target.value
-    });
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props
+      .onAuth("signin", this.state)
+      .then(() => {
+        this.props.history.push("/");
+      })
+      // .catch(() => {
+      //   return;
+      // });
   }
 
 
+
   render(){
+    const { username, password } = this.state;
+    const {
+      errors,
+      history,
+      removeError
+    } = this.props;
+
+    history.listen(() => {
+      removeError();
+    });
+
     return(<div>
-      <h1>Log In!</h1>
-      <form action="/api/login" method="POST">
-        <input type="text"
-         name="username"
-         value={this.state.username}
-         onChange = {this.handleChange}/>
-        <input type="text"
-         name="password"
-         value={this.state.password}
-         onChange = {this.handleChange}/>
-        <button onClick = {this.handleSubmit}>Log In</button>
+      <form onSubmit = {this.handleSubmit}>
+        <h1>Log In!</h1>
+        {errors.message && (<div className="errorMessage">{errors.message}</div>)}
+        <label htmlFor="username">Username</label>
+        <input
+          autoComplete="off"
+          id="username"
+          name="username"
+          onChange={this.handleChange}
+          type="text"
+          value={username}
+        />
+        <label htmlFor="password">Password</label>
+        <input
+          autoComplete="off"
+          id="password"
+          name="password"
+          onChange={this.handleChange}
+          type="password"
+          value={password}
+        />
+        <button type="submit">Log In</button>
       </form>
     </div>)
   }

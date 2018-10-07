@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import { configureStore } from "./store";
 import { setAuthorizationToken, setCurrentUser } from "./store/actions/auth";
 import jwtDecode from "jwt-decode";
+import ErrorBoundary from './hocs/ErrorBoundary'
 
 const store = configureStore();
 
@@ -23,9 +24,11 @@ if (localStorage.jwtToken) {
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ErrorBoundary>
   </Provider>,
   document.getElementById('root'));
 registerServiceWorker();

@@ -1,21 +1,23 @@
 import React, {Component} from 'react'
 import './Footer.css'
+import connect from 'react-redux/es/connect/connect'
+import { logout } from '../store/actions/auth'
 
 class Footer extends Component{
-  constructor(props){
-    super(props)
-    this.state={
-      isLoggedIn:false
-    }
-  }
-
-  render(){
-    if(this.state.isLoggedIn){
-      return(<div className='footer'>You're level 5? With lots of experience!</div>)
+   render(){
+    if( this.props.currentUser && this.props.currentUser.isAuthenticated){
+      return(<div className='footer'>You have {this.props.currentUser.user.experience} experience!</div>)
     } else {
       return(<div className='footer'>Create an new Username/password to access experience and leveling!</div>)
     }
   }
 }
 
-export default Footer;
+
+function mapStateToProps(state) {
+  return {
+    currentUser: state.currentUser
+  };
+}
+
+export default connect(mapStateToProps)(Footer);
