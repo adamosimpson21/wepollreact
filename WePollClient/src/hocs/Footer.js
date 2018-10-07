@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import './Footer.css'
 import connect from 'react-redux/es/connect/connect'
-import { logout } from '../store/actions/auth'
 
 class Footer extends Component{
    render(){

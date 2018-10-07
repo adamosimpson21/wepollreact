@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 import './Party.css'
-import Link from "react-router-dom/es/Link";
-import ButtonLG from "../hocs/ButtonLG";
 import Button from "../hocs/Button";
 
 class Party extends Component{
