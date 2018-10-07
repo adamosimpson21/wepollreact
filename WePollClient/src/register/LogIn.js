@@ -14,6 +14,12 @@ class LogIn extends Component{
 
   handleChange(e){
     this.setState({
+      [e.target.name]:e.target.value
+    });
+  }
+
+  handleSubmit(e){
+    this.setState({
       inputValue:e.target.value
     });
   }
