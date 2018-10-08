@@ -3,6 +3,22 @@
     bottom: 0;
     height: 100px;
     left: 0;
+    width:100%;
     position: absolute;
-    width: 100%;
+}
+
+.footerContent{
+    width:40vw;
+    margin:auto auto;
+}
+
+.xpProgressBar{
+    height:100%;
+    background-color:red;
+}
+
+.progressBarContainer{
+    border: 2px solid black;
+    height:32px;
+    width:100%;
 }
