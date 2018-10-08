@@ -23,9 +23,6 @@ class LogIn extends Component{
       .then(() => {
         this.props.history.push("/");
       })
-      // .catch(() => {
-      //   return;
-      // });
   }
 
 

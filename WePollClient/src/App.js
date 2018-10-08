@@ -15,7 +15,7 @@ import Footer from "./hocs/Footer";
 import { authUser } from "./store/actions/auth";
 import { removeError } from "./store/actions/errors";
 import connect from 'react-redux/es/connect/connect'
-import withRouter from 'react-router/es/withRouter'
+import withRouter from 'react-router/es/withRouter';
 
 const App = props => {
   const { authUser, errors, removeError, currentUser } = props;

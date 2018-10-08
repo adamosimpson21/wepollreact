@@ -12,6 +12,8 @@ import ErrorBoundary from './hocs/ErrorBoundary'
 
 const store = configureStore();
 
+// does not properly hydrate the user's information due too how jwtDecode works.
+// TODO: figure out how to hydrate with user's detailed information
 if (localStorage.jwtToken) {
   setAuthorizationToken(localStorage.jwtToken);
   // prevent someone from manually tampering with the key of jwtToken in localStorage
