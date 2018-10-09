@@ -13,11 +13,11 @@ class Landing extends Component{
           polls to improve debate and Democracy!</div>
         </div>
         <div className='landingButtons'>
-          <Link to='/question'><ButtonLG label='Questions'></ButtonLG></Link>
-          <Link to='/party'><ButtonLG label='Party'></ButtonLG></Link>
-          <Link to='/shop'><ButtonLG label='Shop'></ButtonLG></Link>
-          <Link to='/settings'><ButtonLG label='Settings'></ButtonLG></Link>
-          <Link to='/about'><ButtonLG label='About'></ButtonLG></Link>
+          <Link to='/question'><ButtonLG label='Questions' /></Link>
+          <Link to='/party'><ButtonLG label='Party' /></Link>
+          <Link to='/shop'><ButtonLG label='Shop' /></Link>
+          <Link to='/settings'><ButtonLG label='Settings' /></Link>
+          <Link to='/about'><ButtonLG label='About' /></Link>
         </div>
       </div>)
   }
