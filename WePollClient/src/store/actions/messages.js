@@ -12,9 +12,9 @@ export const remove = id => ({
   id
 });
 
-export const removeMessage = (user_id, message_id) => {
+export const removeMessage = (user_id, item_id) => {
   return dispatch => {
-    return apiCall("delete", `/api/users/${user_id}/messages/${message_id}`)
+    return apiCall("delete", `/api/items/${item_id}/messages/${message_id}`)
       .then(() => dispatch(remove(message_id)))
       .catch(err => {
         addError(err.message);
