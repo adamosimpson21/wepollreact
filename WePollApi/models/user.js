@@ -14,6 +14,11 @@ const UserSchema = new mongoose.Schema({
     },
   image: String,
   settings: [],
+  authLevel: {
+      type:String,
+      enum: ['user', 'subscriber', 'admin', 'founder'],
+      default: 'user'
+    },
   party:{
       type:mongoose.Schema.Types.ObjectId,
       ref:"Party"
@@ -31,7 +36,7 @@ const UserSchema = new mongoose.Schema({
     },
   experience:{
       type:Number,
-      default: 0
+      default: 154
     },
   inventory:[
       {
@@ -48,7 +53,8 @@ const UserSchema = new mongoose.Schema({
       default: 1
     },
   race:{
-      type:String, enum: ['White', 'Black', 'Native American', 'Hispanic', 'Other', 'Not Specified'],
+      type:String,
+      enum: ['White', 'Black', 'Native American', 'Hispanic', 'Other', 'Not Specified'],
       default: 'Not Specified'
     },
   income:{
@@ -56,11 +62,13 @@ const UserSchema = new mongoose.Schema({
       default: 0
     },
   gender:{
-      type:String, enum: ['Male', 'Female', 'Other', 'Choose not to say', 'Not Specified'],
+      type:String,
+      enum: ['Male', 'Female', 'Other', 'Choose not to say', 'Not Specified'],
       default: 'Not Specified'
     },
   education:{
-      type:String, enum: ['Masters', 'Bachelors', 'High School', 'Less than High School', 'Not Specified'],
+      type:String,
+      enum: ['Masters', 'Bachelors', 'High School', 'Less than High School', 'Not Specified'],
       default: 'Not Specified'
     },
   location: String,

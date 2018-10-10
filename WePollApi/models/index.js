@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.set('debug', true);
-mongoose.connect('mongodb://localhost/wepoll')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/wepoll')
 
 mongoose.Promise = Promise;
 

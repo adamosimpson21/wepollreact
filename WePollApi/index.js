@@ -15,13 +15,12 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 //requiring routes
 const questionsRoutes = require("./routes/questions");
-const indexRoutes     = require("./routes/index");
 const otherRoutes     = require("./routes/other");
 const itemRoutes      = require("./routes/items");
 const authRoutes      = require("./routes/auth");
 
 //Using Routes
-app.use("/api", indexRoutes);
+// app.use("/api", indexRoutes);
 app.get("/api/questions", async function(req, res, next){
   try{
     let questions = await db.Question.find()
