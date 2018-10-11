@@ -12,13 +12,13 @@ import Splash from "./splash/Splash";
 import Register from "./register/Register";
 import LogIn from "./register/LogIn";
 import Footer from "./hocs/Footer";
-import { authUser } from "./store/actions/auth";
+import { authUser} from './store/actions/auth'
 import { removeError } from "./store/actions/errors";
 import connect from 'react-redux/es/connect/connect'
 import withRouter from 'react-router/es/withRouter';
 
 const App = props => {
-  const { authUser, errors, removeError, currentUser } = props;
+  const { authUser, errors, removeError } = props;
   return(
       <div className='App'>
         <NavBar/>

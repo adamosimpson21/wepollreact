@@ -27,13 +27,13 @@ class Profile extends Component{
   render(){
     const user = this.props.currentUser.user
     if(user.experience) {
-      const items = user.inventory.map(item => {
+      const items = user.inventory.map(item => (
         <div className='profile-item-single'>An item: {item.name}</div>
-      })
+      ))
       return (<div className='profile-body'>
         <div className='user-aside'>
           {user.username}
-          {user.avatar && <img className='avatar-image' src={user.avatar} /> }
+          {user.avatar && <img className='avatar-image' alt='user avatar' src={user.avatar} /> }
           You're level {checkLevel(user.experience)}
         </div>
         <div className='profile-main'>
@@ -61,9 +61,7 @@ class Profile extends Component{
             </div>) :
             (<Button label='Show Demographics' onClick={this.revealDemographics}/>) }
         </div>
-              </div>)
-    } else if(user){
-      return(<div>{user.username}'s Profile! If your information is not displaying properly, please log out and log back in</div>)
+      </div>)
     } else {
       return(<div>Please log in to see your profile</div>)
     }

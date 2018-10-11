@@ -31,7 +31,7 @@ export function logout() {
 export function authUser(type, userData) {
   return dispatch => {
     // wrap our thunk in a promise so we can wait for the API call
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) =>{
       return apiCall("post", `/api/auth/${type}`, userData)
         .then(({ token, user }) => {
           localStorage.setItem("jwtToken", token);
@@ -41,6 +41,7 @@ export function authUser(type, userData) {
           resolve(); // indicate that the API call succeeded
         })
         .catch(err => {
+          console.log("Error is: ", err)
           dispatch(addError(err.message));
           reject(); // indicate the API call failed
         });

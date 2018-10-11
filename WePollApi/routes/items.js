@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../models');
 const helpers = require('../helpers/items')
 
 router.route('/')

@@ -6,19 +6,17 @@ import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter} from 'react-router-dom'
 import { Provider } from "react-redux";
 import { configureStore } from "./store";
-import { setAuthorizationToken, setCurrentUser } from "./store/actions/auth";
+import { setAuthorizationToken, setCurrentUser, authUser } from "./store/actions/auth";
 import jwtDecode from "jwt-decode";
 import ErrorBoundary from './hocs/ErrorBoundary'
 
 const store = configureStore();
 
-// does not properly hydrate the user's information due too how jwtDecode works.
-// TODO: figure out how to hydrate with user's detailed information
 if (localStorage.jwtToken) {
   setAuthorizationToken(localStorage.jwtToken);
   // prevent someone from manually tampering with the key of jwtToken in localStorage
   try {
-    store.dispatch(setCurrentUser(jwtDecode(localStorage.jwtToken)));
+    store.dispatch(authUser('hydrate', {username:jwtDecode(localStorage.jwtToken).username}));
   } catch (e) {
     store.dispatch(setCurrentUser({}));
   }

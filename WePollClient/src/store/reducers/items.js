@@ -7,17 +7,11 @@ const DEFAULT_STATE = {
 export default (state = DEFAULT_STATE, action) => {
   switch (action.type) {
     case LOAD_ITEMS:
-      return {
-        items: [...action.items]
-      }
+      return [...action.items]
     case ADD_ITEM:
-      return{
-        items: [...action.items]
-      }
+      return [...state ,action.item]
     case REMOVE_ITEM:
-      return {
-        items: [state.items.filter(item => item._id !== action.id)]
-      }
+      return [...state.filter(item => item._id !== action.id)]
     default:
       return state;
   }

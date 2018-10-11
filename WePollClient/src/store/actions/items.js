@@ -17,6 +17,7 @@ export const addItem = item => ({
   item
 })
 
+
 export const removeItem = item_id => {
   return dispatch => {
     return apiCall("delete", `/api/items/${item_id}`)
@@ -41,13 +42,10 @@ export const fetchItems = () => {
 
 export const postItem = body => {
   return dispatch => {
-    return apiCall("post", `/api/items/`, { body })
+    return apiCall("post", `/api/items/`, body)
       .then(res => {
         dispatch(addItem(res))
       })
       .catch(err => addError(err.message));
   }
-  // let { currentUser } = getState();
-  // const id = currentUser.user.id;
-
 };
