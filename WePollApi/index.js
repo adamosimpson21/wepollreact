@@ -18,6 +18,7 @@ const questionsRoutes = require("./routes/questions");
 const otherRoutes     = require("./routes/other");
 const itemRoutes      = require("./routes/items");
 const authRoutes      = require("./routes/auth");
+const userRoutes      = require("./routes/user");
 
 //Using Routes
 // app.use("/api", indexRoutes);
@@ -38,7 +39,8 @@ app.use("/api/users/:id/questions",
   ensureCorrectUser,
   questionsRoutes);
 app.use("/api/items", itemRoutes);
-app.use("/api/auth", authRoutes)
+app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/", otherRoutes);
 
 

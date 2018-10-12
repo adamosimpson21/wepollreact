@@ -6,31 +6,62 @@ import connect from 'react-redux/es/connect/connect'
 class ItemForm extends Component{
   constructor(props){
     super(props);
-    this.state = {inputValue: ''}
+    this.state = this.defaultState
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  defaultState = {
+    name: '',
+    cost: 1,
+    image: "https://images.unsplash.com/photo-1520946708818-4966701c25e6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ada9b03ec040b816c353056c77eb6cd3&auto=format&fit=crop&w=1350&q=80"
+  }
+
   handleChange(e){
     this.setState({
-      inputValue:e.target.value
+      [e.target.name]:e.target.value
     });
   }
 
   handleSubmit(event){
     event.preventDefault()
-    this.props.postItem({name:this.state.inputValue})
-    this.setState({inputValue:''})
+    this.props.postItem({...this.state})
+    this.setState(this.defaultState)
   }
 
   render(){
     return(<div>
       <form onSubmit={this.handleSubmit}>
-        <input
-          type='text'
-          value={this.state.inputValue}
-          onChange = {this.handleChange}
-        />
+        <label>Item Name:
+          <input
+            type='text'
+            name='name'
+            aria-label='item name'
+            value={this.state.name}
+            onChange = {this.handleChange}
+            required
+          />
+        </label>
+        <label>Item Cost:
+          <input
+            type='number'
+            name='cost'
+            aria-label='item cost'
+            value={this.state.cost}
+            onChange = {this.handleChange}
+            required
+          />
+        </label>
+        <label>Item Image:
+          <input
+            type='text'
+            name='image'
+            aria-label='item image'
+            value={this.state.image}
+            onChange = {this.handleChange}
+            required
+          />
+        </label>
         <button type="submit">Add Item</button>
       </form>
     </div>)

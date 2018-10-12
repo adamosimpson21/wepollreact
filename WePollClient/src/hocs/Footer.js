@@ -12,7 +12,6 @@ class Footer extends Component{
                 <div className='progressBarContainer'>
                   <div className="progress-bar xpProgressBar" role="progressbar"
                        aria-valuenow={user.experience}
-                       // aria-valuemin="0" aria-valuemax="100" style={{width: levelProgress(this.props.currentUser.user.experience)}}>
                        aria-valuemin="0" aria-valuemax="100" style={{width: levelProgress(user.experience)+'%'}}>
                   </div>
                 </div>

@@ -11,4 +11,7 @@ router.route('/:itemId')
   .put(helpers.updateItem)
   .delete(helpers.deleteItem)
 
+router.route('/:userId/item/:itemId')
+  .post(helpers.buyItem)
+
 module.exports = router;
