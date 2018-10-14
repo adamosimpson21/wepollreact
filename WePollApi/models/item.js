@@ -17,6 +17,10 @@ const ItemSchema = new mongoose.Schema({
   stack:{
     type:Number,
     default: 1
+  },
+  canHaveMultiple:{
+    type:Boolean,
+    default: false
   }
 });
 

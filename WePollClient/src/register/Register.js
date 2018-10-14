@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import './Register.css'
+import ErrorDisplay from '../hocs/ErrorDisplay'
+import connect from 'react-redux/es/connect/connect'
+import { authUser } from '../store/actions/auth'
 
 class Register extends Component{
   constructor(props){
@@ -19,7 +22,7 @@ class Register extends Component{
   handleSubmit = e => {
     e.preventDefault();
     this.props
-      .onAuth("signup", this.state)
+      .authUser("signup", this.state)
       .then(() => {
         this.props.history.push("/");
       })
@@ -27,20 +30,11 @@ class Register extends Component{
 
   render(){
     const { username, password } = this.state;
-    const {
-      errors,
-      history,
-      removeError
-    } = this.props;
-
-    history.listen(() => {
-      removeError();
-    });
 
     return(<div>
       <form onSubmit = {this.handleSubmit}>
         <h1>Register Here</h1>
-        {errors.message && (<div className="errorMessage">{errors.message}</div>)}
+        <ErrorDisplay />
         <label>Username
           <input
             autoComplete="off"
@@ -67,4 +61,10 @@ class Register extends Component{
   }
 }
 
-export default Register;
+function mapStateToProps(state){
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default connect(mapStateToProps, { authUser })(Register);

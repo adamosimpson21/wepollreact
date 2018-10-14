@@ -14,7 +14,7 @@ export const buyCoins = numCoins => (dispatch, getState) => {
     });
 }
 
-export const buyItem = itemId => (dispatch, getState) => {
+export const addToInventory = itemId => (dispatch, getState) => {
   let { currentUser } = getState();
   const id = currentUser.user._id;
   return apiCall("post", `/api/user/${id}/item/${itemId}`)
@@ -22,7 +22,7 @@ export const buyItem = itemId => (dispatch, getState) => {
       dispatch(updateCurrentUser(updatedUser))
     })
     .catch(err => {
-      addError(err.message);
+      dispatch(addError(err.message));
     });
 }
 
@@ -34,6 +34,6 @@ export const removeFromInventory = itemId => (dispatch, getState) => {
       dispatch(updateCurrentUser(updatedUser))
     })
     .catch(err => {
-      addError(err.message);
+      dispatch(addError(err.message));
     });
 }

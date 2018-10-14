@@ -2,11 +2,12 @@ import React, {Component} from 'react'
 import './ItemList.css'
 import ItemPlacard from "./ItemPlacard";
 import { removeItem } from '../store/actions/items'
+import {addToInventory} from '../store/actions/user'
 import connect from 'react-redux/es/connect/connect'
 
 class ItemList extends Component{
   render(){
-    const { items } = this.props
+    const { items, removeItem, addToInventory} = this.props
     if(items.length>0){
       const { items } = this.props
       console.log("items is :", items)
@@ -14,7 +15,8 @@ class ItemList extends Component{
         <ItemPlacard
           key={item._id}
           {...item}
-          onDelete={this.props.removeItem.bind(this, item._id)}
+          removeItem={removeItem.bind(this, item._id)}
+          addToInventory={addToInventory.bind(this, item._id)}
         />
       ))
       return(<div className='itemList'>{allItems}</div>)
@@ -31,4 +33,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps, { removeItem })(ItemList);
+export default connect(mapStateToProps, { removeItem, addToInventory })(ItemList);

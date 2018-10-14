@@ -1,20 +1,27 @@
 import React, {Component} from 'react'
 import './ItemPlacard.css'
+import connect from 'react-redux/es/connect/connect'
 
 class ItemPlacard extends Component{
   render(){
-    const {name, stack, cost, image, onDelete} = this.props
+    const {name, stack, cost, image, removeItem, addToInventory} = this.props
     return(
       <div>
-        <button>Buy This Item</button>
         <p>Item name is {name}</p>
         <p>Item stack is {stack}</p>
         <p>Item cost is {cost}</p>
         <img className='item-image' src={image} />
-        <span onClick={onDelete}> X </span>
+        <button onClick={addToInventory}>Buy This Item</button>
+        <span onClick={removeItem}> X </span>
       </div>
     )
   }
 }
 
-export default ItemPlacard
+function mapStateToProps(state){
+  return {
+    errors: state.errors
+  }
+}
+
+export default connect(mapStateToProps)(ItemPlacard);

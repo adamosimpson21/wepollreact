@@ -14,12 +14,15 @@ class ItemForm extends Component{
   defaultState = {
     name: '',
     cost: 1,
+    canHaveMultiple: false,
     image: "https://images.unsplash.com/photo-1520946708818-4966701c25e6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ada9b03ec040b816c353056c77eb6cd3&auto=format&fit=crop&w=1350&q=80"
   }
 
-  handleChange(e){
+  handleChange(event){
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
-      [e.target.name]:e.target.value
+      [target.name]: value
     });
   }
 
@@ -50,6 +53,15 @@ class ItemForm extends Component{
             value={this.state.cost}
             onChange = {this.handleChange}
             required
+          />
+        </label>
+        <label>Stackable:
+          <input
+            type='checkbox'
+            name='canHaveMultiple'
+            aria-label='Can a User have multiple in their inventory'
+            value={this.state.canHaveMultiple}
+            onChange={this.handleChange}
           />
         </label>
         <label>Item Image:

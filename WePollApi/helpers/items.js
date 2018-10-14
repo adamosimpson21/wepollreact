@@ -50,15 +50,4 @@ exports.deleteItem = function(req, res){
     })
 }
 
-exports.buyItem = function(req, res){
-  db.Item.findById(req.params.itemId)
-    .then(item => {
-      db.User.findById(req.params.userId)
-        .then(user => {
-
-        })
-    })
-
-}
-
 module.exports = exports;

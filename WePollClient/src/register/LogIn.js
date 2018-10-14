@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import './LogIn.css'
+import ErrorDisplay from '../hocs/ErrorDisplay'
+import connect from 'react-redux/es/connect/connect'
+import { authUser} from '../store/actions/auth'
 
 class LogIn extends Component{
   constructor(props){
@@ -19,30 +22,18 @@ class LogIn extends Component{
   handleSubmit = e => {
     e.preventDefault();
     this.props
-      .onAuth("signin", this.state)
+      .authUser("signin", this.state)
       .then(() => {
         this.props.history.push("/");
       })
   }
 
-
-
   render(){
     const { username, password } = this.state;
-    const {
-      errors,
-      history,
-      removeError
-    } = this.props;
-
-    history.listen(() => {
-      removeError();
-    });
-
     return(<div>
       <form onSubmit = {this.handleSubmit}>
         <h1>Log In!</h1>
-        {errors.message && (<div className="errorMessage">{errors.message}</div>)}
+        <ErrorDisplay />
         <label>Username
           <input
             autoComplete="off"
@@ -69,4 +60,10 @@ class LogIn extends Component{
   }
 }
 
-export default LogIn;
+function mapStateToProps(state){
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default connect(mapStateToProps, { authUser })(LogIn);

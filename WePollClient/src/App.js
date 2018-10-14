@@ -12,13 +12,8 @@ import Splash from "./splash/Splash";
 import Register from "./register/Register";
 import LogIn from "./register/LogIn";
 import Footer from "./hocs/Footer";
-import { authUser} from './store/actions/auth'
-import { removeError } from "./store/actions/errors";
-import connect from 'react-redux/es/connect/connect'
-import withRouter from 'react-router/es/withRouter';
 
-const App = props => {
-  const { authUser, errors, removeError } = props;
+const App = () => {
   return(
       <div className='App'>
         <NavBar/>
@@ -30,27 +25,10 @@ const App = props => {
           <Route path='/question' component={Question}/>
           <Route path='/settings' component={Settings}/>
           <Route path='/shop' component={Shop}/>
+          <Route path='/shop' component={Shop}/>
           <Route path='/splash' component={Splash}/>
-          <Route exact path='/register' component={props => {
-            return (
-              <Register
-                removeError={removeError}
-                errors={errors}
-                onAuth={authUser}
-                {...props}
-              />
-            );
-          }}/>
-          <Route exact path='/logIn' component={props => {
-            return (
-            <LogIn
-              removeError={removeError}
-              errors={errors}
-              onAuth={authUser}
-            {...props}
-            />
-            );
-          }}/>
+          <Route exact path='/register' component={Register}/>
+          <Route exact path='/logIn' component={LogIn} />
           <Redirect from="/" to="/landing"/>
         </Switch>
         <Footer/>
@@ -58,15 +36,5 @@ const App = props => {
   )
 }
 
-function mapStateToProps(state) {
-  return {
-    currentUser: state.currentUser,
-    errors: state.errors
-  };
-}
-
-export default withRouter(
-  connect(mapStateToProps, { authUser, removeError })(App)
-);
-
+export default App;
 

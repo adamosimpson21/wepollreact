@@ -5,6 +5,7 @@ import ItemForm from "./ItemForm";
 import { fetchItems } from '../store/actions/items';
 import connect from 'react-redux/es/connect/connect';
 import UserInventory from './UserInventory'
+import ErrorDisplay from '../hocs/ErrorDisplay'
 
 class Shop extends Component{
   componentDidMount(){
@@ -15,6 +16,7 @@ class Shop extends Component{
     const { items } = this.props
     return(<div>
       <ItemForm />
+      <ErrorDisplay />
       <UserInventory />
       <ItemList items={items}/>
     </div>)
