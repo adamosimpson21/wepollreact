@@ -9,7 +9,7 @@ class ItemPlacard extends Component{
         <p>Item name is {name}</p>
         <p>Item stack is {stack}</p>
         <p>Item cost is {cost}</p>
-        <img className='item-image' src={image} />
+        <img className='item-image' alt={name} src={image} />
         <button onClick={addToInventory}>Buy This Item</button>
         <span onClick={removeItem}> X </span>
       </div>

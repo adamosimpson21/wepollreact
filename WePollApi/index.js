@@ -5,7 +5,7 @@ const cors = require("cors");
 const port = process.env.PORT || 4000;
 const bodyParser = require("body-parser");
 const errorHandler = require("./handlers/error")
-const {loginRequired, ensureCorrectUser} = require("./middleware/auth")
+const {loginRequired, ensureCorrectUser, adminOnly} = require("./middleware/auth")
 const db = require("./models")
 
 //Config

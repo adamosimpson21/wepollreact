@@ -5,12 +5,9 @@ import connect from 'react-redux/es/connect/connect'
 import { authUser } from '../store/actions/auth'
 
 class Register extends Component{
-  constructor(props){
-    super(props)
-    this.state={
-      username:'',
-      password:''
-    }
+  state={
+    username:'',
+    password:''
   }
 
   handleChange = e => {

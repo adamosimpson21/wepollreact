@@ -19,7 +19,7 @@ class InventoryItem extends Component{
     let itemWithDetails = this.populateItem(item)
     return(
       <div className='item-in-inventory'>This is an item {itemWithDetails.name}
-        <img className='item-image' src={itemWithDetails.image} />
+        <img className='item-image' alt={itemWithDetails.name} src={itemWithDetails.image} />
         <button onClick={removeItem}>Delete Me</button>
       </div>
     )

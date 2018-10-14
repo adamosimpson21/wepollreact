@@ -19,7 +19,7 @@ class Footer extends Component{
               </div>
             </div>)
     } else {
-      return(<div className='footer'>Create an new Username/password to access experience and leveling!</div>)
+      return(<div className='footer'>Sign up to access experience and leveling!</div>)
     }
   }
 }

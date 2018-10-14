@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const helpers = require('../helpers/items')
+const helpers = require('../helpers/items');
 
 router.route('/')
   .get(helpers.getItems)
