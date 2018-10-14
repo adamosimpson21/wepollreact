@@ -1,5 +1,9 @@
 var db = require('../models');
 
+function userHasItem(user, item){
+  return user.inventory.includes(item._id)
+}
+
 exports.addCoins = function(req, res){
   db.User.findById(req.params.id)
     .then(foundUser => {
@@ -11,6 +15,17 @@ exports.addCoins = function(req, res){
     .catch(err => {
       res.send(err);
     })
+}
+
+exports.addItem = async function(req, res){
+  try {
+    let user = await db.User.findById(req.params.id)
+    user.inventory.push(req.params.item_id);
+    await user.save();
+    return res.status(200).json(user)
+  } catch(err){
+    return next(err)
+  }
 }
 
 module.exports = exports

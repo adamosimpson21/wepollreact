@@ -18,7 +18,6 @@ export const buyCoins = numCoins => (dispatch, getState) => {
   const id = currentUser.user._id;
   return apiCall("put", `/api/user/${id}/coins`, {coins: numCoins})
     .then(updatedUser =>{
-        console.log("returning updated user :", updatedUser)
         dispatch(updateCurrentUser(updatedUser))
       })
     .catch(err => {
@@ -26,3 +25,14 @@ export const buyCoins = numCoins => (dispatch, getState) => {
     });
 }
 
+export const buyItem = itemId => (dispatch, getState) => {
+  let { currentUser } = getState();
+  const id = currentUser.user._id;
+  return apiCall("post", `/api/user/${id}/item/${itemId}`)
+    .then(updatedUser =>{
+      dispatch(updateCurrentUser(updatedUser))
+    })
+    .catch(err => {
+      addError(err.message);
+    });
+}

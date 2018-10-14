@@ -8,4 +8,9 @@ router.route("/:id/coins",
     ensureCorrectUser)
   .put(helpers.addCoins)
 
+router.route("/:id/item/:item_id",
+    loginRequired,
+    ensureCorrectUser)
+  .post(helpers.addItem)
+
 module.exports = router;

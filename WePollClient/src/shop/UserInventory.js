@@ -9,6 +9,7 @@ class UserInventory extends Component{
     this.state = this.defaultState
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.populateItem = this.populateItem.bind(this)
   }
 
   defaultState = {
@@ -28,39 +29,61 @@ class UserInventory extends Component{
     this.setState(this.defaultState)
   }
 
-
+  populateItem(itemId){
+    let itemMatch = {}
+    this.props.items.forEach(item => {
+      if(item._id===itemId){
+        itemMatch = {...item}
+      }
+    })
+    return itemMatch;
+  }
 
   render(){
-    const { user } = this.props.currentUser
-    return(
-      <div>
-        {user.username} 's Inventory
-        You have {user.coins} coins
-        <form onSubmit={this.handleSubmit}>
-          <label>Buy Coins:
-            <input
-              type='number'
-              name='coinsToBuy'
-              aria-label='Number of Coins to Buy'
-              value={this.state.coinsToBuy}
-              onChange = {this.handleChange}
-              required
-            />
-          </label>
-          <button type="submit">Add Coins</button>
-        </form>
+    const { user} = this.props.currentUser
+    const items = this.props.items
+    if(Object.keys(user).length > 0){
+      let userItems = (<div>Loading Items</div>)
+      if(items.length >0){
+        userItems = user.inventory.map(item => {
+          let itemWithDetails = this.populateItem(item)
+          return (<div className='item-in-inventory'>This is an item {itemWithDetails.name} </div>)
+        })
+      }
+      return(
         <div>
-
+          {user.username}'s Inventory
+          You have {user.coins} coins
+          <form onSubmit={this.handleSubmit}>
+            <label>Buy Coins:
+              <input
+                type='number'
+                name='coinsToBuy'
+                aria-label='Number of Coins to Buy'
+                value={this.state.coinsToBuy}
+                onChange = {this.handleChange}
+                required
+              />
+            </label>
+            <button type="submit">Add Coins</button>
+          </form>
+          <div>
+            <div className='inventory-items'>
+              {userItems}
+            </div>
+          </div>
         </div>
-      </div>
-    )
+    )} else {
+      return(<div>Loading User...</div>)
+    }
   }
 }
 
 
 function mapStateToProps(state) {
   return {
-    currentUser: state.currentUser
+    currentUser: state.currentUser,
+    items: state.items
   };
 }
 
