@@ -17,10 +17,22 @@ exports.addCoins = function(req, res){
     })
 }
 
-exports.addItem = async function(req, res){
+exports.addItem = async function(req, res, next){
   try {
     let user = await db.User.findById(req.params.id)
     user.inventory.push(req.params.item_id);
+    await user.save();
+    return res.status(200).json(user)
+  } catch(err){
+    return next(err)
+  }
+}
+
+exports.removeItem = async function(req, res, next){
+  try{
+    let user = await db.User.findById(req.params.id)
+    let index = user.inventory.indexOf(req.params.item_id)
+    user.inventory.splice(index, 1)
     await user.save();
     return res.status(200).json(user)
   } catch(err){

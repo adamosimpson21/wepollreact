@@ -6,7 +6,7 @@ import connect from 'react-redux/es/connect/connect'
 
 class ItemList extends Component{
   render(){
-    const {items } = this.props
+    const { items } = this.props
     if(items.length>0){
       const { items } = this.props
       console.log("items is :", items)

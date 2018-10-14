@@ -6,6 +6,7 @@ class ItemPlacard extends Component{
     const {name, stack, cost, image, onDelete} = this.props
     return(
       <div>
+        <button>Buy This Item</button>
         <p>Item name is {name}</p>
         <p>Item stack is {stack}</p>
         <p>Item cost is {cost}</p>

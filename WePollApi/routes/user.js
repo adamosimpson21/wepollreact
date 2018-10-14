@@ -12,5 +12,6 @@ router.route("/:id/item/:item_id",
     loginRequired,
     ensureCorrectUser)
   .post(helpers.addItem)
+  .delete(helpers.removeItem)
 
 module.exports = router;

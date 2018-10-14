@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './UserInventory.css';
 import connect from 'react-redux/es/connect/connect'
-import {buyCoins} from '../store/actions/user'
+import {buyCoins, removeFromInventory} from '../store/actions/user'
+import InventoryItem from './InventoryItem'
 
 class UserInventory extends Component{
   constructor (props) {
@@ -9,7 +10,6 @@ class UserInventory extends Component{
     this.state = this.defaultState
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.populateItem = this.populateItem.bind(this)
   }
 
   defaultState = {
@@ -25,30 +25,21 @@ class UserInventory extends Component{
   handleSubmit(event){
     event.preventDefault()
     this.props.buyCoins(this.state.coinsToBuy)
-      // .then( updatedUser => {})
     this.setState(this.defaultState)
-  }
-
-  populateItem(itemId){
-    let itemMatch = {}
-    this.props.items.forEach(item => {
-      if(item._id===itemId){
-        itemMatch = {...item}
-      }
-    })
-    return itemMatch;
   }
 
   render(){
     const { user} = this.props.currentUser
-    const items = this.props.items
+    let {items, removeFromInventory } = this.props
     if(Object.keys(user).length > 0){
       let userItems = (<div>Loading Items</div>)
       if(items.length >0){
-        userItems = user.inventory.map(item => {
-          let itemWithDetails = this.populateItem(item)
-          return (<div className='item-in-inventory'>This is an item {itemWithDetails.name} </div>)
-        })
+        userItems = user.inventory.map((item, index) => (
+          <InventoryItem
+            key={index}
+            item={item}
+            removeItem={removeFromInventory.bind(this, item)}
+          />))
       }
       return(
         <div>
@@ -87,4 +78,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, {buyCoins})(UserInventory);
+export default connect(mapStateToProps, {buyCoins, removeFromInventory})(UserInventory);
