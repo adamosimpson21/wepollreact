@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="daab1bdc-cbe9-4ecd-ac83-5d1122bb79fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WePollClient/src/hocs/ErrorDisplay.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WePollClient/src/hocs/ErrorDisplay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollApi/helpers/items.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollApi/helpers/items.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollApi/helpers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollApi/helpers/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollApi/models/item.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollApi/models/item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollApi/routes/items.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollApi/routes/items.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WePollClient/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollClient/src/hocs/ErrorBoundary.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollClient/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WePollClient/src/hocs/ErrorDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/hocs/ErrorDisplay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WePollClient/src/register/LogIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/register/LogIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollClient/src/register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/register/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WePollClient/src/shop/InventoryItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/shop/InventoryItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WePollClient/src/shop/ItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/shop/ItemForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WePollClient/src/shop/ItemList.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/shop/ItemList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WePollClient/src/shop/ItemPlacard.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/shop/ItemPlacard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollClient/src/shop/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/shop/Shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollClient/src/store/actions/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/store/actions/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WePollClient/src/shop/UserInventory.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/shop/UserInventory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WePollClient/src/shop/api.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -54,7 +47,7 @@
           <entry key="html" value="2" />
           <entry key="ico" value="1" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="391" />
+          <entry key="js" value="400" />
           <entry key="json" value="13" />
           <entry key="md" value="4" />
           <entry key="mongod" value="2" />
@@ -67,7 +60,7 @@
           <entry key="HTML" value="2" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="13" />
-          <entry key="JavaScript" value="391" />
+          <entry key="JavaScript" value="400" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="SVG" value="1" />
@@ -79,7 +72,7 @@
           <entry key="css" value="1581" />
           <entry key="env" value="91" />
           <entry key="html" value="7" />
-          <entry key="js" value="32034" />
+          <entry key="js" value="32208" />
           <entry key="json" value="181" />
           <entry key="md" value="2594" />
           <entry key="mongod" value="7" />
@@ -90,7 +83,7 @@
           <entry key="CSS" value="1581" />
           <entry key="HTML" value="7" />
           <entry key="JSON" value="181" />
-          <entry key="JavaScript" value="32034" />
+          <entry key="JavaScript" value="32208" />
           <entry key="Markdown" value="2594" />
           <entry key="PLAIN_TEXT" value="116" />
         </counts>
@@ -101,10 +94,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/Shop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
+            <state relative-caret-position="552">
               <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
@@ -113,59 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WePollClient/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WePollClient/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WePollClient/src/register/LogIn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="62" selection-start-line="62" selection-end-line="68" selection-end-column="61" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/ItemForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="87" column="2" lean-forward="true" selection-start-line="87" selection-start-column="2" selection-end-line="87" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WePollClient/src/register/Register.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+            <state relative-caret-position="-138">
+              <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -219,12 +164,7 @@
         <option value="$PROJECT_DIR$/WePollClient/src/shop/UserInventory.css" />
         <option value="$PROJECT_DIR$/WePollApi/routes/user.js" />
         <option value="$PROJECT_DIR$/WePollClient/src/shop/UserDisplay.js" />
-        <option value="$PROJECT_DIR$/WePollClient/src/shop/UserInventory.js" />
-        <option value="$PROJECT_DIR$/WePollClient/src/shop/InventoryItem.js" />
-        <option value="$PROJECT_DIR$/WePollClient/src/shop/ItemList.js" />
-        <option value="$PROJECT_DIR$/WePollClient/src/shop/ItemPlacard.js" />
         <option value="$PROJECT_DIR$/WePollApi/models/item.js" />
-        <option value="$PROJECT_DIR$/WePollClient/src/shop/ItemForm.js" />
         <option value="$PROJECT_DIR$/WePollApi/helpers/user.js" />
         <option value="$PROJECT_DIR$/WePollApi/helpers/items.js" />
         <option value="$PROJECT_DIR$/WePollApi/routes/items.js" />
@@ -232,11 +172,16 @@
         <option value="$PROJECT_DIR$/WePollClient/src/hocs/ErrorBoundary.js" />
         <option value="$PROJECT_DIR$/WePollClient/src/index.js" />
         <option value="$PROJECT_DIR$/WePollClient/src/hocs/ErrorDisplay.css" />
-        <option value="$PROJECT_DIR$/WePollClient/src/hocs/ErrorDisplay.js" />
-        <option value="$PROJECT_DIR$/WePollClient/src/register/LogIn.js" />
         <option value="$PROJECT_DIR$/WePollClient/src/register/Register.js" />
-        <option value="$PROJECT_DIR$/WePollClient/src/App.js" />
         <option value="$PROJECT_DIR$/WePollClient/src/shop/Shop.js" />
+        <option value="$PROJECT_DIR$/WePollClient/src/App.js" />
+        <option value="$PROJECT_DIR$/WePollClient/src/hocs/ErrorDisplay.js" />
+        <option value="$PROJECT_DIR$/WePollClient/src/shop/InventoryItem.js" />
+        <option value="$PROJECT_DIR$/WePollClient/src/shop/ItemForm.js" />
+        <option value="$PROJECT_DIR$/WePollClient/src/shop/ItemList.js" />
+        <option value="$PROJECT_DIR$/WePollClient/src/shop/ItemPlacard.js" />
+        <option value="$PROJECT_DIR$/WePollClient/src/shop/UserInventory.js" />
+        <option value="$PROJECT_DIR$/WePollClient/src/register/LogIn.js" />
       </list>
     </option>
   </component>
@@ -294,21 +239,7 @@
               <item name="wepollreact" type="462c0819:PsiDirectoryNode" />
               <item name="WePollClient" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="hocs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollreact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollreact" type="462c0819:PsiDirectoryNode" />
-              <item name="WePollClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="register" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollreact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollreact" type="462c0819:PsiDirectoryNode" />
-              <item name="WePollClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -367,12 +298,12 @@
       <workItem from="1538727476156" duration="2377000" />
       <workItem from="1538729876270" duration="55367000" />
       <workItem from="1539284196898" duration="16326000" />
-      <workItem from="1539467999426" duration="23201000" />
+      <workItem from="1539467999426" duration="26462000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154339000" />
+    <option name="totallyTimeSpent" value="157600000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -414,9 +345,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WePollClient/src/question/Question.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/WePollClient/src/services/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -428,9 +356,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/WePollClient/src/splash/Splash.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WePollClient/src/splash/Splash.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/WePollApi/middleware/index.js">
@@ -547,16 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/InventoryItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/InventoryItem.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -591,28 +506,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/ItemList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/ItemList.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/UserInventory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="863">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WePollApi/models/item.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -676,16 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/ItemPlacard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WePollClient/src/store/actions/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -706,36 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WePollClient/src/hocs/ErrorDisplay.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/ItemForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="87" column="2" lean-forward="true" selection-start-line="87" selection-start-column="2" selection-end-line="87" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WePollClient/src/register/LogIn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="62" selection-start-line="62" selection-end-line="68" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WePollClient/src/register/Register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
@@ -746,10 +601,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WePollClient/src/hocs/ErrorDisplay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WePollClient/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        <state relative-caret-position="357">
+          <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -758,7 +623,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WePollClient/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
+        <state relative-caret-position="173">
           <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -766,10 +631,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/api.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/InventoryItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WePollClient/src/splash/Splash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/UserInventory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-80">
+          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/ItemForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1196">
+          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/ItemList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/ItemPlacard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WePollClient/src/shop/Shop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
+        <state relative-caret-position="552">
           <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WePollClient/src/register/LogIn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

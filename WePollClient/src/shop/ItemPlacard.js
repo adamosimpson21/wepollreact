@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import './ItemPlacard.css'
-import connect from 'react-redux/es/connect/connect'
 
 class ItemPlacard extends Component{
   render(){
@@ -18,10 +17,4 @@ class ItemPlacard extends Component{
   }
 }
 
-function mapStateToProps(state){
-  return {
-    errors: state.errors
-  }
-}
-
-export default connect(mapStateToProps)(ItemPlacard);
+export default ItemPlacard;

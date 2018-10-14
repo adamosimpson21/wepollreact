@@ -5,35 +5,30 @@ import {buyCoins, removeFromInventory} from '../store/actions/user'
 import InventoryItem from './InventoryItem'
 
 class UserInventory extends Component{
-  constructor (props) {
-    super(props)
-    this.state = this.defaultState
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-
   defaultState = {
     coinsToBuy : 5
   }
 
-  handleChange(e){
+  state = this.defaultState
+
+  handleChange = event => {
     this.setState({
-      [e.target.name]:e.target.value
+      [event.target.name]:event.target.value
     });
   }
 
-  handleSubmit(event){
+  handleSubmit = event => {
     event.preventDefault()
     this.props.buyCoins(this.state.coinsToBuy)
     this.setState(this.defaultState)
   }
 
   render(){
-    const { user} = this.props.currentUser
-    let {items, removeFromInventory } = this.props
+    const { user } = this.props.currentUser
+    const { items, removeFromInventory } = this.props
     if(Object.keys(user).length > 0){
-      let userItems = (<div>Loading Items</div>)
-      if(items.length >0){
+      let userItems = (<div>You don't have any items!</div>)
+      if(items.length >0 && user.inventory.length>0){
         userItems = user.inventory.map((item, index) => (
           <InventoryItem
             key={index}
@@ -43,7 +38,7 @@ class UserInventory extends Component{
       }
       return(
         <div>
-          {user.username}'s Inventory
+          {user.username}'s Inventory!
           You have {user.coins} coins
           <form onSubmit={this.handleSubmit}>
             <label>Buy Coins:

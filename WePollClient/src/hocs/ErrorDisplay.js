@@ -8,10 +8,10 @@ class ErrorDisplay extends Component{
   render(){
     const { errors, history, removeError } = this.props
 
-    history.listen(() => {
-      removeError();
-    });
     if(errors.message){
+      history.listen(() => {
+        removeError();
+      });
       return(
         <div className='error-display'>
           {errors.message}

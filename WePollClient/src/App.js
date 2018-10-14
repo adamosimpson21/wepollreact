@@ -18,15 +18,14 @@ const App = () => {
       <div className='App'>
         <NavBar/>
         <Switch>
-          <Route path='/landing' component={Landing}/>
-          <Route path='/about' component={() => window.location = 'https://www.dinnostudio.com/wepoll-deck'}/>
-          <Route path='/party' component={Party}/>
-          <Route path='/profile' component={Profile}/>
-          <Route path='/question' component={Question}/>
-          <Route path='/settings' component={Settings}/>
-          <Route path='/shop' component={Shop}/>
-          <Route path='/shop' component={Shop}/>
-          <Route path='/splash' component={Splash}/>
+          <Route exact path='/landing' component={Landing}/>
+          <Route exact path='/about' component={() => window.location = 'https://www.dinnostudio.com/wepoll-deck'}/>
+          <Route exact path='/party' component={Party}/>
+          <Route exact path='/profile' component={Profile}/>
+          <Route exact path='/question' component={Question}/>
+          <Route exact path='/settings' component={Settings}/>
+          <Route exact path='/shop' component={Shop}/>
+          <Route exact path='/splash' component={Splash}/>
           <Route exact path='/register' component={Register}/>
           <Route exact path='/logIn' component={LogIn} />
           <Redirect from="/" to="/landing"/>

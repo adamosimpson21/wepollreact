@@ -9,8 +9,6 @@ class ItemList extends Component{
   render(){
     const { items, removeItem, addToInventory} = this.props
     if(items.length>0){
-      const { items } = this.props
-      console.log("items is :", items)
       const allItems = items.map(item => (
         <ItemPlacard
           key={item._id}
@@ -28,8 +26,7 @@ class ItemList extends Component{
 
 function mapStateToProps(state){
   return {
-    items: state.items,
-    errors: state.errors
+    items: state.items
   }
 }
 

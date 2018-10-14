@@ -4,13 +4,6 @@ import { postItem } from '../store/actions/items'
 import connect from 'react-redux/es/connect/connect'
 
 class ItemForm extends Component{
-  constructor(props){
-    super(props);
-    this.state = this.defaultState
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-
   defaultState = {
     name: '',
     cost: 1,
@@ -18,7 +11,9 @@ class ItemForm extends Component{
     image: "https://images.unsplash.com/photo-1520946708818-4966701c25e6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ada9b03ec040b816c353056c77eb6cd3&auto=format&fit=crop&w=1350&q=80"
   }
 
-  handleChange(event){
+  state = this.defaultState
+
+  handleChange = event => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
@@ -26,7 +21,7 @@ class ItemForm extends Component{
     });
   }
 
-  handleSubmit(event){
+  handleSubmit = event => {
     event.preventDefault()
     this.props.postItem({...this.state})
     this.setState(this.defaultState)
@@ -55,7 +50,7 @@ class ItemForm extends Component{
             required
           />
         </label>
-        <label>Stackable:
+        <label>Stack-able:
           <input
             type='checkbox'
             name='canHaveMultiple'
@@ -82,8 +77,7 @@ class ItemForm extends Component{
 
  function mapStateToProps(state){
   return {
-    items: state.items,
-    errors: state.errors
+    items: state.items
   }
  }
 

@@ -18,7 +18,7 @@ class InventoryItem extends Component{
     const { item, removeItem } = this.props
     let itemWithDetails = this.populateItem(item)
     return(
-      <div className='item-in-inventory'>This is an item {itemWithDetails.name},
+      <div className='item-in-inventory'>This is an item {itemWithDetails.name}
         <img className='item-image' src={itemWithDetails.image} />
         <button onClick={removeItem}>Delete Me</button>
       </div>
@@ -28,9 +28,8 @@ class InventoryItem extends Component{
 
 function mapStateToProps(state) {
   return {
-    currentUser: state.currentUser,
     items: state.items
   };
 }
 
-export default connect(mapStateToProps, { removeFromInventory})(InventoryItem);
+export default connect(mapStateToProps, { removeFromInventory })(InventoryItem);

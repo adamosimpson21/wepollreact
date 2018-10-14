@@ -5,13 +5,10 @@ import connect from 'react-redux/es/connect/connect'
 import { authUser} from '../store/actions/auth'
 
 class LogIn extends Component{
-  constructor(props){
-    super(props)
-    this.state={
+  state={
       username:'',
       password:''
     }
-  }
 
   handleChange = e => {
     this.setState({
