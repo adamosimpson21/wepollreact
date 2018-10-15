@@ -1,4 +1,4 @@
-var db = require('../models');
+const db = require('../models');
 
 exports.getItems = function(req, res){
   db.Item.find()

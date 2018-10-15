@@ -1,4 +1,4 @@
-var db = require('../models');
+const db = require('../models');
 
 function userHasItem(user, item){
   let userHas = false;

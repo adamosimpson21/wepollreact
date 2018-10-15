@@ -48,7 +48,7 @@ const UserSchema = new mongoose.Schema({
     },
   experience:{
       type:Number,
-      default: 154
+      default: 0
     },
   inventory:[
       {
