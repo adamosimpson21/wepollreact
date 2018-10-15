@@ -36,8 +36,8 @@ const questionSchema = new mongoose.Schema({
 
 questionSchema.pre("remove", async function(next){
   try{
-    let user = await User.findById(this.userId);
-    user.message.remove(this.id);
+    let user = await User.findById(this.author);
+    user.authored.remove(this.id);
     await user.save()
     return next();
   } catch(err){

@@ -2,16 +2,20 @@ const db = require("../models")
 
 exports.createQuestion = async function(req, res, next){
   try{
-    let message = await db.Question.create({
-      title:req.body.title,
-      questionContent: req.body.questionContent,
-      description: req.body.description,
+    const { title, questionContent, description, education, tags, answers } = req.body
+    let question = await db.Question.create({
+      title,
+      education,
+      tags,
+      questionContent,
+      description,
+      answers,
       author:req.params.id
     })
     let foundUser = await db.User.findById(req.params.id)
-    foundUser.questions.push(message.id);
+    foundUser.authored.push(question.id);
     await foundUser.save()
-    let foundQuestion = await db.Question.findById(message._id)
+    let foundQuestion = await db.Question.findById(question._id)
       .populate("user", {
         username: true
       })
@@ -21,10 +25,28 @@ exports.createQuestion = async function(req, res, next){
   }
 }
 
-// GET /api/users/:id/questions/:message_id
 exports.getQuestion = async function(req, res, next){
   try{
-    let question = await db.Question.find(req.params.question_id)
+    let question = await db.Question.findById(req.params.question_id)
+    return res.status(200).json(question)
+  } catch(err){
+    return next(err);
+  }
+}
+
+exports.getAllQuestions = async function(req, res, next){
+  try{
+    let questions = await db.Question.find({})
+    return res.status(200).json(questions)
+  } catch(err){
+    return next(err);
+  }
+}
+
+exports.updateQuestion = async function(req, res, next){
+  try{
+    let question = await db.Question.findById(req.params.iq)
+    console.log("not implemented yet: ", question)
     return res.status(200).json(question)
   } catch(err){
     return next(err);
@@ -40,3 +62,5 @@ exports.deleteQuestion = async function(req, res, next){
     return next(err);
   }
 }
+
+module.exports = exports;

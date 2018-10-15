@@ -17,15 +17,14 @@ export const addItem = item => ({
   item
 })
 
-
-export const removeItem = item_id => {
-  return dispatch => {
-    return apiCall("delete", `/api/items/${item_id}`)
-      .then(() => dispatch(remove(item_id)))
-      .catch(err => {
-        addError(err.message);
-      });
-  };
+export const removeItem = item_id => (dispatch, getState) => {
+  let { currentUser } = getState();
+  const id = currentUser.user._id;
+  return apiCall("delete", `/api/items/${id}/${item_id}`)
+    .then(() => dispatch(remove(item_id)))
+    .catch(err => {
+      addError(err.message);
+    });
 };
 
 export const fetchItems = () => {
@@ -40,12 +39,12 @@ export const fetchItems = () => {
   };
 };
 
-export const postItem = body => {
-  return dispatch => {
-    return apiCall("post", `/api/items/`, body)
-      .then(res => {
-        dispatch(addItem(res))
-      })
-      .catch(err => addError(err.message));
-  }
+export const postItem = body => (dispatch, getState) => {
+  let { currentUser } = getState();
+  const id = currentUser.user._id;
+  return apiCall("post", `/api/items/${id}`, body)
+    .then(res => {
+      dispatch(addItem(res))
+    })
+    .catch(err => addError(err.message));
 };

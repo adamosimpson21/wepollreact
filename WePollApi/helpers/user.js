@@ -64,4 +64,13 @@ exports.removeItem = async function(req, res, next){
   }
 }
 
+exports.authLevel = async function(req,res, next){
+  try{
+    let user = await db.User.findByIdAndUpdate(req.params.id, {authLevel: req.body.authLevel})
+    return res.status(200).json(user)
+  } catch (err){
+    return next(err)
+  }
+}
+
 module.exports = exports

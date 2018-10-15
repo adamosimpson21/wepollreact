@@ -23,12 +23,20 @@ const UserSchema = new mongoose.Schema({
       type:mongoose.Schema.Types.ObjectId,
       ref:"Party"
     },
+  authored:[
+    {
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"Question"
+    }
+  ],
+  // questions the user has answered
   questions:[
       {
         type:mongoose.Schema.Types.ObjectId,
         ref:"Question"
       }
     ],
+  //store those answers here, as well
   answers:[],
   coins:{
       type:Number,

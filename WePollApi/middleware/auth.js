@@ -1,9 +1,9 @@
 require("dotenv").load();
-let jwt = require("jsonwebtoken")
+let jwt = require("jsonwebtoken");
+const db = require('../models');
 
 //make sure the user is logged in -Authentication
 exports.loginRequired = function(req, res, next){
-  console.log("in login required")
   try{
     const token = req.headers.authorization.split(" ")[1] // Bearer [token]
     jwt.verify(token, process.env.SECRET_KEY, function(err, decoded){
@@ -32,6 +32,7 @@ exports.ensureCorrectUser = function(req, res, next){
       if(decoded && decoded.id === req.params.id){
         return next();
       } else {
+        console.log("got here")
         return next({
           status: 401,
           message: "Unauthorized, Wrong User"
@@ -47,7 +48,7 @@ exports.ensureCorrectUser = function(req, res, next){
 }
 
 exports.adminOnly = async function(req, res, next){
-  console.log("entering adminonly")
+  console.log("in admin only")
   try{
     let user = await db.User.findById(req.params.id)
     console.log("user.authLevel is: ", user.authLevel)
@@ -60,6 +61,7 @@ exports.adminOnly = async function(req, res, next){
       })
     }
   } catch(err){
+    console.log("err is: ", err)
     return next({
       status:401,
       message: "Access Denied"

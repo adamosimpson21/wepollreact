@@ -1,7 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const helpers = require('../helpers/user');
-const { loginRequired, ensureCorrectUser } = require('../middleware/auth')
+const { loginRequired, ensureCorrectUser, adminOnly } = require('../middleware/auth')
+
+router.route("/:id/authLevel")
+  .all(loginRequired,
+    ensureCorrectUser,
+    adminOnly)
+  .put(helpers.authLevel)
 
 router.route("/:id/coins")
     .all(loginRequired,
