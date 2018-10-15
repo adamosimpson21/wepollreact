@@ -36,8 +36,12 @@ const UserSchema = new mongoose.Schema({
         ref:"Question"
       }
     ],
-  //store those answers here, as well
-  answers:[],
+  results:[
+    {
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"Result"
+    }
+  ],
   coins:{
       type:Number,
       default: 5

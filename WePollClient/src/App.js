@@ -12,6 +12,8 @@ import Splash from "./splash/Splash";
 import Register from "./register/Register";
 import LogIn from "./register/LogIn";
 import Footer from "./hocs/Footer";
+import NewQuestionForm from './question/NewQuestionForm'
+import QuestionDetails from './question/QuestionDetails'
 
 const App = () => {
   return(
@@ -28,6 +30,8 @@ const App = () => {
           <Route exact path='/splash' component={Splash}/>
           <Route exact path='/register' component={Register}/>
           <Route exact path='/logIn' component={LogIn} />
+          <Route exact path='/newQuestionForm' component={NewQuestionForm} />
+          <Route path='/question/:questionId' component={QuestionDetails} />
           <Redirect from="/" to="/landing"/>
         </Switch>
         <Footer/>

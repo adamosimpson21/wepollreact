@@ -29,7 +29,17 @@ const questionSchema = new mongoose.Schema({
   },
   education: String,
   tags: [],
-  answers: []
+  answers: [
+    {
+      type:String
+    }
+  ],
+  results:[
+    {
+      type:mongoose.Schema.Types.ObjectId,
+      ref: "Result"
+    }
+  ]
 },{
   timestamps: true
 })

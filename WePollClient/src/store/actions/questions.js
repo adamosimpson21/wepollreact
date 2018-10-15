@@ -30,8 +30,8 @@ export const updateQuestion = question => ({
 export const getAllQuestions = () => {
   return dispatch => {
     return apiCall("get", "/api/questions")
-      .then(res => dispatch(loadQuestions(res))
-      .catch(err => dispatch(addError(err.message)));
+      .then(res => dispatch(loadQuestions(res)))
+      .catch(err => dispatch(addError(err.message)))
   }
 }
 
