@@ -7,7 +7,7 @@ export const loadQuestions = questions => ({
   questions
 });
 
-export const removeQuestions = questionId => ({
+export const removeQuestion = questionId => ({
   type: DELETE_QUESTION,
   questionId
 });
@@ -30,31 +30,39 @@ export const updateQuestion = question => ({
 export const getAllQuestions = () => {
   return dispatch => {
     return apiCall("get", "/api/questions")
-      .then(res => {
-        dispatch(loadQuestions(res))
-      })
-      .catch(err => {
-        dispatch(addError(err.message));
-      });
+      .then(res => dispatch(loadQuestions(res))
+      .catch(err => dispatch(addError(err.message)));
   }
 }
 
-export const postItem = body => (dispatch, getState) => {
+export const postQuestion = body => (dispatch, getState) => {
   let { currentUser } = getState();
   const id = currentUser.user._id;
-  return apiCall("post", `/api/items/${id}`, body)
-    .then(res => {
-      dispatch(addItem(res))
-    })
+  return apiCall("post", `/api/questions/${id}`, body)
+    .then(res => dispatch(createQuestion(res)))
+    .catch(err => addError(err.message));
+}
+
+export const removeQuestionAction = question_id => (dispatch, getState) => {
+  let { currentUser } = getState();
+  const id = currentUser.user._id;
+  return apiCall("delete", `/api/questions/${id}/${question_id}`)
+    .then(() => dispatch(removeQuestion(question_id)))
     .catch(err => addError(err.message));
 };
 
-export const removeItem = item_id => (dispatch, getState) => {
+export const loadOneQuestionAction = question_id => (dispatch, getState) => {
   let { currentUser } = getState();
   const id = currentUser.user._id;
-  return apiCall("delete", `/api/items/${id}/${item_id}`)
-    .then(() => dispatch(remove(item_id)))
-    .catch(err => {
-      addError(err.message);
-    });
-};
+  return apiCall("get", `/api/questions/${id}/${question_id}`)
+    .then(res => dispatch(loadOneQuestion(res)))
+    .catch(err => addError(err.message));
+}
+
+export const updateQuestionAction = question_id => (dispatch, getState) => {
+  let { currentUser } = getState();
+  const id = currentUser.user._id;
+  return apiCall("put", `/api/questions/${id}/${question_id}`)
+    .then(res => dispatch(updateQuestion(res)))
+    .catch(err => addError(err.message));
+}
