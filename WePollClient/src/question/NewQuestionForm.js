@@ -1,20 +1,33 @@
 import React, {Component} from 'react';
 import './NewQuestionForm.css'
+import { postQuestion } from '../store/actions/questions'
+import connect from 'react-redux/es/connect/connect'
 
 class NewQuestionForm extends Component{
+  constructor(props){
+    super(props)
+    this.state = this.defaultState
+  }
+
   defaultState = {
-    question: '',
+    questionContent: '',
     title:'',
     description:'',
     education:'',
-    answers:[]
+    numAnswers:3
   }
 
-  state = this.defaultState;
 
   handleSubmit = event => {
     event.preventDefault()
-    this.setState(this.defaultState)
+    // TODO: Can this be refactored to reduce or map?
+    let answersArray = []
+    for(let i = 0; i<this.state.numAnswers; i++){
+      // TODO: there has to be a better way to access answer1, answer2, answer3, etc.
+      answersArray.push(this.state['answer' + (i+1)])
+    }
+    const { questionContent, title, description, education } = this.state
+    this.props.postQuestion({questionContent, title, description, education, answersArray})
   }
 
   handleChange = event => {
@@ -26,51 +39,81 @@ class NewQuestionForm extends Component{
   }
 
   render(){
+    let answerInputs = [];
+    for(let index = 0; index<this.state.numAnswers; index++){
+      console.log("answerinputs is: ", answerInputs)
+      answerInputs.push(<label key={index}> Answer {index+1}:
+        <input
+          type='text'
+           //TODO: understand and research the implications of setState on states that weren't in the initial constructor
+          name={`answer${index+1}`}
+          aria-label={`Answer #${index+1}`}
+          value={this.state.answers}
+          onChange = {this.handleChange}
+          required
+        />
+      </label>)
+    }
+
+
     return(<div className='new-question-form'>
       <form onSubmit={this.handleSubmit}>
         <label> Question:
           <input
             type='text'
-            name'question'
+            name='questionContent'
             aria-label='Your Question'
-            value={this.state.question}
+            value={this.state.questionContent}
             onChange = {this.handleChange}
+            required
           />
         </label>
         <label> Title:
           <input
             type='text'
-            name'title'
+            name='title'
             aria-label='Short title'
             value={this.state.title}
             onChange = {this.handleChange}
+            required
           />
         </label>
         <label> Description:
           <input
             type='text'
-            name'description'
+            name='description'
             aria-label='Detailed Description'
             value={this.state.description}
             onChange = {this.handleChange}
+            required
           />
         </label>
         <label> Education:
           <input
             type='text'
-            name'education'
+            name='education'
             aria-label='An Educational Resource to teach others about possible answers'
             value={this.state.education}
             onChange = {this.handleChange}
+            required
           />
         </label>
-
-
-
-        <button>Create this Question</button>
+        <label> Number of Answers:
+          <input
+            type='number'
+            name='numAnswers'
+            aria-label='An Educational Resource to teach others about possible answers'
+            value={this.state.numAnswers}
+            onChange = {this.handleChange}
+            required
+          />
+        </label>
+        <br />
+        {answerInputs}
+        <button type="submit">Create this Question</button>
       </form>
     </div>)
   }
 }
 
-export default NewQuestionForm;
+export default connect(null, {postQuestion})(NewQuestionForm);

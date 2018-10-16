@@ -2,6 +2,7 @@ const db = require("../models")
 
 exports.createQuestion = async function(req, res, next){
   try{
+    console.log("in create question. req.body is: ", req.body)
     const { title, questionContent, description, education, tags, answers } = req.body
     let question = await db.Question.create({
       title,

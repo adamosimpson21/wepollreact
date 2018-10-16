@@ -5,11 +5,14 @@ import {buyCoins, removeFromInventory} from '../store/actions/user'
 import InventoryItem from './InventoryItem'
 
 class UserInventory extends Component{
+  constructor(props){
+    super(props)
+    this.state = this.defaultState
+  }
+
   defaultState = {
     coinsToBuy : 5
   }
-
-  state = this.defaultState
 
   handleChange = event => {
     this.setState({
