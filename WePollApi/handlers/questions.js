@@ -64,4 +64,17 @@ exports.deleteQuestion = async function(req, res, next){
   }
 }
 
+exports.answerQuestion = async function(req, res, next){
+  try{
+    let question = await db.Question.findById(req.params.question_id)
+    let user = await db.User.findById(req.params.id)
+    console.log(req.body)
+    let result = await db.Result.create({question:question._id, user:user._id, answer:req.body.answer})
+    console.log("result is: ", result)
+    return res.status(200).json(result);
+  } catch(err){
+    return next(err);
+  }
+}
+
 module.exports = exports;

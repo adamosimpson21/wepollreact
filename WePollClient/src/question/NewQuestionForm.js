@@ -21,13 +21,13 @@ class NewQuestionForm extends Component{
   handleSubmit = event => {
     event.preventDefault()
     // TODO: Can this be refactored to reduce or map?
-    let answersArray = []
+    let answers = []
     for(let i = 0; i<this.state.numAnswers; i++){
       // TODO: there has to be a better way to access answer1, answer2, answer3, etc.
-      answersArray.push(this.state['answer' + (i+1)])
+      answers.push(this.state['answer' + (i+1)])
     }
     const { questionContent, title, description, education } = this.state
-    this.props.postQuestion({questionContent, title, description, education, answersArray})
+    this.props.postQuestion({questionContent, title, description, education, answers})
   }
 
   handleChange = event => {
@@ -96,6 +96,16 @@ class NewQuestionForm extends Component{
             value={this.state.education}
             onChange = {this.handleChange}
             required
+          />
+        </label>
+        {/* TODO: Implement tags */}
+        <label> Tags:
+          <input
+            type='text'
+            name='tags'
+            aria-label='Keywords to search for'
+            value='Not Implemented yet'
+            onChange = {this.handleChange}
           />
         </label>
         <label> Number of Answers:

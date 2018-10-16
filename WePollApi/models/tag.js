@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 //Tag Schema Setup
 const TagSchema = new mongoose.Schema({
     tag: String,
-    question: [{
+    questions: [{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Question"
     }]

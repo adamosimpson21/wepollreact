@@ -13,7 +13,7 @@ const questionSchema = new mongoose.Schema({
   },
   rating: {
     type:Number,
-    default: 1
+    default: 100
   },
   author:{
     type:mongoose.Schema.Types.ObjectId,
@@ -28,7 +28,12 @@ const questionSchema = new mongoose.Schema({
     default: 150
   },
   education: String,
-  tags: [],
+  tags: [
+    {
+      type:mongoose.Schema.Types.ObjectId,
+      ref: "Tag"
+    }
+  ],
   answers: [
     {
       type:String
