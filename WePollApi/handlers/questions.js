@@ -28,7 +28,7 @@ exports.createQuestion = async function(req, res, next){
 
 exports.getQuestion = async function(req, res, next){
   try{
-    let question = await db.Question.findById(req.params.question_id)
+    let question = await db.Question.findById(req.params.question_id).populate(Result, {answer:true})
     return res.status(200).json(question)
   } catch(err){
     return next(err);
@@ -70,7 +70,12 @@ exports.answerQuestion = async function(req, res, next){
     let user = await db.User.findById(req.params.id)
     console.log(req.body)
     let result = await db.Result.create({question:question._id, user:user._id, answer:req.body.answer})
+    user.results.push(result)
+    user.questions.push(question._id)
+    question.results.push(result._id)
     console.log("result is: ", result)
+    await user.save();
+    await question.save();
     return res.status(200).json(result);
   } catch(err){
     return next(err);

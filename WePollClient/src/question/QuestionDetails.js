@@ -3,6 +3,7 @@ import './QuestionDetails.css'
 import { loadOneQuestionAction, removeQuestionAction } from '../store/actions/questions'
 import connect from 'react-redux/es/connect/connect'
 import withRouter from 'react-router/es/withRouter'
+import Link from 'react-router-dom/es/Link'
 
 class QuestionDetails extends Component{
   componentDidMount(){
@@ -39,6 +40,7 @@ class QuestionDetails extends Component{
         <div className='question-title'>{education}</div>
         <div className='question-title'>{description}</div>
         {answerDisplays}
+        <div><Link to={'/question/'+_id + '/results'}>Go to results page (for development)</Link></div>
         <div className='question-title'>Answer this Question to get {xpReward} experience</div>
         <div className='question-title'>This question has a {rating} rating and was created at {createdAt} by {author}</div>
         { isAuthenticated && (user._id===author || user.authLevel==='founder') && (

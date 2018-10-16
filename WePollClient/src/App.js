@@ -14,6 +14,7 @@ import LogIn from "./register/LogIn";
 import Footer from "./hocs/Footer";
 import NewQuestionForm from './question/NewQuestionForm'
 import QuestionDetails from './question/QuestionDetails'
+import QuestionResults from './question/QuestionResults'
 
 const App = () => {
   return(
@@ -31,7 +32,8 @@ const App = () => {
           <Route exact path='/register' component={Register}/>
           <Route exact path='/logIn' component={LogIn} />
           <Route exact path='/newQuestionForm' component={NewQuestionForm} />
-          <Route path='/question/:questionId' component={QuestionDetails} />
+          <Route exact path='/question/:questionId' component={QuestionDetails} />
+          <Route exact path='/question/:questionId/results' component={QuestionResults} />
           <Redirect from="/" to="/landing"/>
         </Switch>
         <Footer/>
