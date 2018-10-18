@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="daab1bdc-cbe9-4ecd-ac83-5d1122bb79fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WePollClient/src/hocs/BackFrame.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WePollClient/src/hocs/BackFrame.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollClient/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollClient/src/hocs/Icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/hocs/Icon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollClient/src/hocs/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/hocs/NavBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollClient/src/hocs/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/hocs/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollClient/src/question/NewQuestionForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/question/NewQuestionForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WePollClient/src/question/QuestionTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/WePollClient/src/question/QuestionTitle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -89,7 +81,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Procfile" value="1" />
+          <entry key="Procfile" value="2" />
           <entry key="css" value="55" />
           <entry key="env" value="1" />
           <entry key="gitignore" value="1" />
@@ -111,7 +103,7 @@
           <entry key="JSON" value="13" />
           <entry key="JavaScript" value="515" />
           <entry key="Markdown" value="4" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="PLAIN_TEXT" value="6" />
           <entry key="SVG" value="7" />
         </counts>
       </usages-collector>
@@ -214,13 +206,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WePollClient/src/hocs/NavBar.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
               <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -332,63 +329,6 @@
               <item name="wepollreact" type="462c0819:PsiDirectoryNode" />
               <item name="WePollClient" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="wepollreact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollreact" type="462c0819:PsiDirectoryNode" />
-              <item name="WePollClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollreact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollreact" type="462c0819:PsiDirectoryNode" />
-              <item name="WePollClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="hocs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollreact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollreact" type="462c0819:PsiDirectoryNode" />
-              <item name="WePollClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollreact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollreact" type="462c0819:PsiDirectoryNode" />
-              <item name="WePollClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="question" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollreact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollreact" type="462c0819:PsiDirectoryNode" />
-              <item name="WePollClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollreact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollreact" type="462c0819:PsiDirectoryNode" />
-              <item name="WePollClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollreact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollreact" type="462c0819:PsiDirectoryNode" />
-              <item name="WePollClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollreact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollreact" type="462c0819:PsiDirectoryNode" />
-              <item name="WePollClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -448,12 +388,12 @@
       <workItem from="1538729876270" duration="55367000" />
       <workItem from="1539284196898" duration="16326000" />
       <workItem from="1539467999426" duration="31992000" />
-      <workItem from="1539558183251" duration="46917000" />
+      <workItem from="1539558183251" duration="48385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210047000" />
+    <option name="totallyTimeSpent" value="211515000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -468,7 +408,7 @@
     <frame x="-8" y="-8" width="1873" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19836512" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19836512" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -482,7 +422,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.38396624" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.38396624" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -495,9 +435,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WePollClient/src/question/QuestionDetails.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/WePollApi/helpers/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
@@ -856,6 +793,9 @@
           <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
