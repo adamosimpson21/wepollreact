@@ -22,7 +22,6 @@ class QuestionResults extends Component{
         ++resultsObj[result.answer]
       }
     })
-    console.log("resultsObj is: ", resultsObj)
     return resultsObj;
   }
 
@@ -30,10 +29,11 @@ class QuestionResults extends Component{
     if(this.props.questions[0]){
       const { questionContent, description, title, author, education, results, createdAt, xpReward, rating, answers, _id } = this.props.questions[0]
       const { isAuthenticated, user } = this.props.currentUser
-      const answerDisplays = answers.map(answer => (
-        <div className='answer-display' key={answer}>{answer}</div>
-      ))
       let resultsObj = this.countResults(answers, results);
+      const answerDisplays = answers.map(answer => (
+        <div className='answer-display' key={answer}>{answer} : {resultsObj[answer]}</div>
+      ))
+
       return(<div>
         <div className='question-title'>{title}</div>
         <div className='question-title'>{questionContent}</div>

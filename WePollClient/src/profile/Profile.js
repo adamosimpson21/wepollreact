@@ -4,6 +4,7 @@ import withAuth from '../hocs/withAuth'
 import connect from 'react-redux/es/connect/connect'
 import { checkLevel } from '../helper/experience'
 import Button from '../hocs/Button'
+import {fetchItems} from '../store/actions/items'
 
 class Profile extends Component{
   constructor(props){
@@ -12,23 +13,27 @@ class Profile extends Component{
       revealPassword:false,
       revealDemographics:false
     }
-    this.revealPassword = this.revealPassword.bind(this)
-    this.revealDemographics = this.revealDemographics.bind(this)
   }
 
-  revealPassword(){
+  componentDidMount(){
+    if(this.props.items.length <= 0){
+      this.props.fetchItems();
+    }
+  }
+
+  revealPassword = () => {
     this.setState({revealPassword:true})
   }
 
-  revealDemographics(){
+  revealDemographics = () => {
     this.setState({revealDemographics:true})
   }
 
   render(){
     const user = this.props.currentUser.user
     if(user.experience) {
-      const items = user.inventory.map(item => (
-        <div className='profile-item-single'>An item: {item.name}</div>
+      const items = user.inventory.map((item, index) => (
+        <div className='profile-item-single' key={index}>An item: {item.name}</div>
       ))
       return (<div className='profile-body'>
         <div className='user-aside'>
@@ -40,6 +45,7 @@ class Profile extends Component{
           <div className='profile-list'>Username: {user.username}</div>
           <div className='profile-list'>Party: {user.party}</div>
           <div className='profile-list'>Number of Questions Answered: {user.questions.length}</div>
+          <div className='profile-list'>Number of Questions Authored: {user.authored.length}</div>
           <div className='profile-list'>Created at: {user.createdAt}</div>
           <div className='profile-list-inventory'>Inventory: {items}</div>
           <div className='profile-list-password'>Password:
@@ -70,8 +76,9 @@ class Profile extends Component{
 
 function mapStateToProps(state) {
   return {
-    currentUser: state.currentUser
+    currentUser: state.currentUser,
+    items: state.items
   };
 }
 
-export default connect(mapStateToProps)(withAuth(Profile));
+export default connect(mapStateToProps, {fetchItems})(withAuth(Profile));

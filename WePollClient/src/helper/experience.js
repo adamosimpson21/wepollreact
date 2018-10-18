@@ -14,8 +14,20 @@ export function xpToLevel(level){
     return 2000;
   } else if (level<=7){
     return 2500;
+  } else if (level<=8){
+    return 3500;
+  } else if (level<=9){
+    return 5000;
+  } else if (level<=10){
+    return 7500;
+  } else if (level<=11){
+    return 10000;
+  } else if (level<=12){
+    return 15000;
+  } else if (level<=13){
+    return 25000;
   } else {
-    return 3000;
+    return 40000;
   }
 }
 

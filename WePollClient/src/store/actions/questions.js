@@ -78,8 +78,8 @@ export const updateQuestionAction = question_id => (dispatch, getState) => {
 export const answerQuestionAction = (question_id, answer) => (dispatch, getState) => {
   let { currentUser } = getState();
   const id = currentUser.user._id;
-  return true
-  // return apiCall("post", `/api/questions/${id}/${question_id}`, answer)
-  //   .then(res => dispatch(answerQuestion(res)))
-  //   .catch(err => addError(err.message));
+  console.log("in action, answer is: ", answer)
+  return apiCall("post", `/api/questions/${id}/${question_id}`, {answer})
+    .then(res => dispatch(answerQuestion(res)))
+    .catch(err => addError(err.message));
 }
