@@ -39,9 +39,9 @@ class NewQuestionForm extends Component{
   }
 
   render(){
+    // TODO: refactor this? Currently works, but there's probably a better way to do it? reduce?
     let answerInputs = [];
     for(let index = 0; index<this.state.numAnswers; index++){
-      console.log("answerinputs is: ", answerInputs)
       answerInputs.push(<label key={index}> Answer {index+1}:
         <input
           type='text'

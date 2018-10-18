@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './QuestionTitle.css'
-import Link from 'react-router-dom/es/Link'
+import Link from 'react-router-dom/es/Link';
+import BackFrame from '../hocs/BackFrame'
 
 class QuestionTitle extends Component{
   render(){
@@ -12,4 +13,4 @@ class QuestionTitle extends Component{
   }
 }
 
-export default QuestionTitle;
+export default BackFrame(QuestionTitle);
