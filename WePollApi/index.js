@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require('express')
 const app = express();
 const cors = require("cors");
+const path = require('path');
 const port = process.env.PORT || 4000;
 const bodyParser = require("body-parser");
 const errorHandler = require("./handlers/error")
@@ -26,12 +27,16 @@ app.use("/api/auth", authRoutes);
 app.use("/api/", otherRoutes);
 
 app.use(function(req, res, next){
-  let err = new Error("Not Found")
+  let err = new Error("You're in the express app")
   err.status = 404;
   next(err)
 })
 
 app.use(errorHandler)
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+"../WePollClient/build/index.html"));
+});
 
 app.listen(port, function(){
   console.log("WePoll Server started!" + port);
