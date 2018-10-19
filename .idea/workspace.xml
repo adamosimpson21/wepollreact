@@ -117,7 +117,7 @@
           <entry key="gitignore" value="10" />
           <entry key="html" value="7" />
           <entry key="js" value="46820" />
-          <entry key="json" value="368" />
+          <entry key="json" value="375" />
           <entry key="md" value="2594" />
           <entry key="mongod" value="7" />
         </counts>
@@ -127,7 +127,7 @@
           <entry key=".env file" value="28" />
           <entry key="CSS" value="1712" />
           <entry key="HTML" value="7" />
-          <entry key="JSON" value="368" />
+          <entry key="JSON" value="375" />
           <entry key="JavaScript" value="46820" />
           <entry key="Markdown" value="2594" />
           <entry key="PLAIN_TEXT" value="180" />
@@ -162,7 +162,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WePollClient/Procfile">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -171,11 +171,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WePollClient/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-161">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            <state relative-caret-position="138">
+              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -271,13 +271,13 @@
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/WePollClient/Procfile" />
         <option value="$PROJECT_DIR$/WePollClient/.gitignore" />
-        <option value="$PROJECT_DIR$/WePollClient/package.json" />
         <option value="$PROJECT_DIR$/WePollApi/.env" />
         <option value="$PROJECT_DIR$/WePollApi/models/index.js" />
         <option value="$PROJECT_DIR$/WePollApi/Procfile" />
         <option value="$PROJECT_DIR$/WePollApi/.gitignore" />
         <option value="$PROJECT_DIR$/WePollApi/package.json" />
         <option value="$PROJECT_DIR$/WePollApi/index.js" />
+        <option value="$PROJECT_DIR$/WePollClient/package.json" />
       </list>
     </option>
   </component>
@@ -390,12 +390,12 @@
       <workItem from="1538729876270" duration="55367000" />
       <workItem from="1539284196898" duration="16326000" />
       <workItem from="1539467999426" duration="31992000" />
-      <workItem from="1539558183251" duration="60259000" />
+      <workItem from="1539558183251" duration="60600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223389000" />
+    <option name="totallyTimeSpent" value="223730000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -408,9 +408,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1873" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19836512" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19836512" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -424,7 +423,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.38396624" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.38396624" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -765,13 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WePollClient/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WePollClient/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -790,6 +782,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WePollClient/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
         </state>
       </provider>
     </entry>
