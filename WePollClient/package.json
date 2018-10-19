@@ -2,6 +2,10 @@
   "name": "wepollreact",
   "version": "0.2.0",
   "private": true,
+  "engines": {
+    "npm": "5.6.0",
+    "node": "8.11.3"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "d3": "^5.7.0",
